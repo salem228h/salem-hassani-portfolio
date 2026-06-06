@@ -28,7 +28,7 @@
 
   /* NAV TABS */
   .nav-tabs { background:var(--ink); position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(184,146,58,0.2); }
-  .nav-inner { max-width:900px; margin:0 auto; display:flex; gap:0; overflow-x:auto; }
+  .nav-inner { max-width:900px; margin:0 auto; display:flex; gap:0; overflow-x:auto; justify-content:center; }
   .nav-tab { padding:14px 22px; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#9ca3af; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap; transition:color 0.2s,border-color 0.2s; font-weight:500; background:none; border-top:none; border-left:none; border-right:none; font-family:'DM Sans',sans-serif; }
   .nav-tab:hover { color:#d1d5db; }
   .nav-tab.active { color:var(--gold-light); border-bottom-color:var(--gold); }
@@ -235,7 +235,7 @@
   <div class="nav-inner">
     <button class="nav-tab active" onclick="showTab('profile')">Profile</button>
     <button class="nav-tab" onclick="showTab('projects')">42 Projects</button>
-    <button class="nav-tab" onclick="showTab('github')">GitHub Guide</button>
+    <button class="nav-tab" onclick="showTab('cv')">Download CV</button>
   </div>
 </nav>
 
@@ -552,6 +552,57 @@
       </div>
       <div style="margin-top:18px;"><a href="YOUR_GOOGLE_DRIVE_LINK" target="_blank" class="proj-link" style="padding:8px 20px;font-size:12px;">View Full Capstone Report</a></div>
     </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 3 — DOWNLOAD CV
+══════════════════════════════════════════ -->
+<div id="tab-cv" class="page-section">
+<div class="main-wrap">
+
+  <div class="section-label">Curriculum Vitae</div>
+
+  <div class="value-box" style="text-align:center;">
+    <h2>Mohammad Salem Hassani — Cybersecurity Professional</h2>
+    <p style="margin-bottom:28px;">Download a copy of my full CV including work experience, education, certifications, and technical skills. Available in PDF format for easy sharing with recruiters and hiring managers.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+      <a href="YOUR_CV_LINK.pdf" download target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#000;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:5px;transition:background 0.2s;">
+        ⬇ Download CV (PDF)
+      </a>
+      <a href="mailto:salemhassani228@email.com" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--gold-light);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:5px;border:1px solid rgba(184,146,58,0.4);transition:border-color 0.2s;">
+        ✉ Contact Me
+      </a>
+    </div>
+  </div>
+
+  <div class="value-cards">
+    <div class="vcard" style="text-align:center;">
+      <div class="vcard-icon">🏛️</div>
+      <h3>Work Experience</h3>
+      <p>2+ years IT & Security at a national government authority (NSIA, Afghanistan).</p>
+    </div>
+    <div class="vcard" style="text-align:center;">
+      <div class="vcard-icon">🎓</div>
+      <h3>Education</h3>
+      <p>AEC Cybersecurity – Dawson College (2025–Present) · B.Sc. IT – Kabul Polytechnic University.</p>
+    </div>
+    <div class="vcard" style="text-align:center;">
+      <div class="vcard-icon">📜</div>
+      <h3>Certifications</h3>
+      <p>Google Cybersecurity Certificate · CompTIA Security+ (In Progress) · TryHackMe Top 21%.</p>
+    </div>
+    <div class="vcard" style="text-align:center;">
+      <div class="vcard-icon">🌐</div>
+      <h3>Languages</h3>
+      <p>English (Fluent) · French (A2 – Improving) · Dari (Native).</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="text-align:center;">
+    Replace <code>YOUR_CV_LINK.pdf</code> in the HTML with your actual Google Drive or direct download link to activate the download button.
   </div>
 
 </div>
