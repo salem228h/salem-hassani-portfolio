@@ -173,7 +173,25 @@
   /* NOTE BOX */
   .note-box { background:var(--card-bg); border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:6px; padding:16px 20px; font-size:13px; color:var(--muted); line-height:1.7; margin-top:40px; }
 
-   @media(max-width:600px){
+  /* ═══ GITHUB GUIDE ═══ */
+  .guide-wrap { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:36px 40px; }
+  .guide-title { font-size:13px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:28px; display:flex; align-items:center; gap:10px; }
+  .steps { display:flex; flex-direction:column; }
+  .step { display:grid; grid-template-columns:52px 1fr; gap:18px; padding:20px 0; border-bottom:1px solid var(--border); }
+  .step:last-child { border-bottom:none; }
+  .step-num { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:rgba(184,146,58,0.3); line-height:1; padding-top:2px; }
+  .step-content h4 { font-size:14px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .step-content p { font-size:13px; color:var(--muted); line-height:1.7; }
+  .step-content b { color:var(--ink); }
+  .code-block { background:var(--ink); border:1px solid rgba(184,146,58,0.2); border-radius:4px; padding:12px 16px; margin-top:10px; font-family:'JetBrains Mono',monospace; font-size:12px; color:#86efac; line-height:1.8; overflow-x:auto; }
+  .code-block .cm { color:var(--muted); }
+  .tip { background:rgba(184,146,58,0.06); border:1px solid rgba(184,146,58,0.15); border-left:3px solid var(--gold); padding:14px 18px; font-size:13px; color:var(--muted); line-height:1.7; margin-top:22px; border-radius:0 4px 4px 0; }
+  .tip b { color:var(--gold); }
+
+  footer { background:var(--ink); color:#6b7280; text-align:center; padding:24px 20px; font-size:12px; letter-spacing:0.5px; }
+  footer span { color:var(--gold-light); }
+
+  @media(max-width:600px){
     header,  .main-wrap { padding-left:20px; padding-right:20px; }
     .exp-item { grid-template-columns:1fr; }
     .exp-left { text-align:left; padding:18px 0 4px; }
@@ -217,6 +235,7 @@
   <div class="nav-inner">
     <button class="nav-tab active" onclick="showTab('profile')">Profile</button>
     <button class="nav-tab" onclick="showTab('projects')">42 Projects</button>
+    <button class="nav-tab" onclick="showTab('github')">GitHub Guide</button>
   </div>
 </nav>
 
@@ -363,7 +382,7 @@
   <div class="section-label">Languages</div>
   <div class="lang-row">
     <span class="lang-pill">English <span class="lang-level">· Professional Fluency</span></span>
-    <span class="lang-pill">French <span class="lang-level">· B1 — Actively Improving</span></span>
+    <span class="lang-pill">French <span class="lang-level">· A2 — Actively Improving</span></span>
     <span class="lang-pill">Dari <span class="lang-level">· Native</span></span>
   </div>
 
@@ -538,6 +557,89 @@
 </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     TAB 3 — GITHUB GUIDE
+══════════════════════════════════════════ -->
+<div id="tab-github" class="page-section">
+<div class="main-wrap">
+
+  <div class="guide-wrap">
+    <div class="guide-title">💻 راهنمای کامل — GitHub Pages + LinkedIn</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>ساخت حساب GitHub</h4>
+          <p>برو به <b>github.com</b> → Sign up → username حرفه‌ای انتخاب کن، مثلاً: <b>salem-hassani-cyber</b></p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>ساخت Repository جدید</h4>
+          <p>روی <b>"+"</b> کلیک کن → New repository → اسم: <b>cybersecurity-portfolio</b> → <b>Public</b> → Create repository</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>آپلود فایل HTML این پورتفولیو</h4>
+          <p>توی ریپوزیتوری → <b>"Add file"</b> → <b>"Upload files"</b> → این فایل را آپلود کن → اسمش را <b>index.html</b> بذار → Commit changes</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>فعال کردن GitHub Pages</h4>
+          <p><b>Settings</b> → <b>Pages</b> → Source: <b>Deploy from a branch</b> → Branch: <b>main</b> → folder: <b>/root</b> → Save</p>
+          <p style="margin-top:8px;">بعد از 2-3 دقیقه آدرست آماده میشه:</p>
+          <div class="code-block">https://salem-hassani-cyber.github.io/cybersecurity-portfolio/</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>آپلود PDF‌ها روی Google Drive</h4>
+          <p>هر PDF را آپلود کن → راست کلیک → <b>Share</b> → <b>Anyone with the link can view</b> → لینک را copy کن → در فایل HTML جای <b>YOUR_GOOGLE_DRIVE_LINK</b> بذار (42 بار)</p>
+          <div class="code-block">
+            <span class="cm"># فرمت لینک مستقیم Google Drive:</span><br>
+            https://drive.google.com/file/d/<span style="color:#fbbf24">FILE_ID_HERE</span>/view
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h4>اضافه کردن به LinkedIn — Featured Section</h4>
+          <p>LinkedIn Profile → <b>Edit profile</b> → <b>"Add section"</b> → <b>"Featured"</b> → <b>"Links"</b> → لینک GitHub Pages را اضافه کن با عنوان:</p>
+          <div class="code-block">Cybersecurity Portfolio — 42 Projects | AEC Dawson College</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">07</div>
+        <div class="step-content">
+          <h4>بعد از هر تغییر — آپدیت کردن</h4>
+          <p>توی ریپوزیتوری → فایل <b>index.html</b> را کلیک کن → آیکون ✏️ → تغییر بده → Commit → GitHub Pages خودش آپدیت میشه.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip">
+      <b>💡 نکته:</b> وقتی همه لینک‌های PDF را اضافه کردی، فایل HTML را دوباره روی GitHub replace کن.
+      هر بار پروژه جدید تموم کردی — یک کارت جدید اضافه کن و فایل را آپدیت کن. پورتفولیوت زنده میمونه!
+    </div>
+  </div>
+
+</div>
+</div>
 
 <footer>
   Cybersecurity Portfolio · <span>Mohammad Salem Hassani</span> · Dawson College AEC · Montréal, QC · linkedin.com/in/salem786
