@@ -1,3 +1,4 @@
+ni portfolio · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +22,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;}
-
+ 
 /* scanlines */
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.012) 2px,rgba(0,0,0,0.012) 4px);pointer-events:none;z-index:9999;}
 /* grid */
 body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
-
+ 
 /* LANG BAR */
 .lang-bar{background:var(--tbg);display:flex;justify-content:flex-end;align-items:center;gap:6px;padding:8px 28px;border-bottom:1px solid rgba(0,212,255,0.1);position:relative;z-index:200;}
 .lb-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#334155;text-transform:uppercase;margin-right:12px;}
@@ -34,7 +35,7 @@ body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(r
 .lang-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(0,212,255,0.15);border-radius:3px;padding:5px 14px;font-size:10px;font-weight:700;letter-spacing:2px;color:#475569;cursor:pointer;font-family:'Space Mono',monospace;transition:all 0.2s;text-transform:uppercase;}
 .lang-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.05);}
 .lang-btn.active{background:rgba(0,212,255,0.08);border-color:var(--cyan);color:var(--cyan);}
-
+ 
 /* HEADER */
 header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px 50px;border-bottom:1px solid rgba(0,212,255,0.1);}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.06) 1px,transparent 1px);background-size:30px 30px;animation:gridShift 20s linear infinite;pointer-events:none;}
@@ -42,9 +43,9 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .orb1{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,255,0.08) 0%,transparent 65%);top:-100px;right:-100px;pointer-events:none;animation:orb 8s ease-in-out infinite alternate;}
 .orb2{position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(0,255,136,0.06) 0%,transparent 65%);bottom:-80px;left:200px;pointer-events:none;animation:orb 10s ease-in-out infinite alternate-reverse;}
 @keyframes orb{from{transform:translate(0,0) scale(1);}to{transform:translate(20px,-20px) scale(1.05);}}
-
+ 
 .header-inner{max-width:1060px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;}
-
+ 
 /* Terminal widget */
 .hterm{background:rgba(0,0,0,0.5);border:1px solid rgba(0,212,255,0.15);border-radius:6px;width:280px;overflow:hidden;backdrop-filter:blur(10px);}
 .tbar{background:rgba(255,255,255,0.04);padding:8px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(0,212,255,0.08);}
@@ -58,18 +59,18 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .tout.w{color:var(--amber);}.tout.c{color:var(--cyan);}
 .tcursor{display:inline-block;width:8px;height:13px;background:var(--cyan);vertical-align:middle;animation:blink 1.1s step-end infinite;margin-left:2px;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
-
+ 
 .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
 .eyebrow::before{content:'[SYS]';color:#334155;}
 .hname{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.05;color:#f8fafc;letter-spacing:-1px;margin-bottom:6px;}
 .hname .hl{background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hsub{font-family:'Space Mono',monospace;font-size:11px;color:#475569;margin-bottom:22px;letter-spacing:0.5px;}
-
+ 
 .contact-row{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:24px;font-family:'Space Mono',monospace;font-size:10px;}
 .contact-row a,.ci{display:flex;align-items:center;gap:8px;color:#475569;text-decoration:none;transition:color 0.2s;}
 .contact-row a:hover{color:var(--cyan);}
 .ci-icon{color:var(--cyan);font-size:12px;}
-
+ 
 .badge-row{display:flex;flex-wrap:wrap;gap:8px;}
 .hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.18);border-radius:3px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);font-weight:700;transition:all 0.2s;}
 .hbadge:hover{background:rgba(0,212,255,0.1);box-shadow:var(--glow-c);}
@@ -80,20 +81,20 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .pulse.g{background:var(--green);}
 .pulse.a{background:var(--amber);}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.6);}}
-
+ 
 /* NAV */
 .nav-tabs{background:var(--surface);position:sticky;top:0;z-index:100;border-bottom:2px solid var(--border);box-shadow:0 2px 20px rgba(0,0,0,0.05);}
 .nav-inner{max-width:1060px;margin:0 auto;display:flex;align-items:stretch;overflow-x:auto;}
 .nav-tab{padding:14px 22px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;font-weight:700;transition:all 0.2s;}
 .nav-tab:hover{color:var(--ink);border-bottom-color:rgba(0,212,255,0.3);}
 .nav-tab.active{color:var(--ink);border-bottom-color:var(--cyan);}
-
+ 
 .page-section{display:none;}
 .page-section.active{display:block;animation:fadeIn 0.4s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
+ 
 .wrap{max-width:1060px;margin:0 auto;padding:48px 24px 100px;position:relative;z-index:1;}
-
+ 
 /* STATUS BAR */
 .status-bar{background:var(--tbg);border:1px solid rgba(0,212,255,0.1);border-radius:6px;padding:12px 20px;display:flex;align-items:center;gap:18px;margin-bottom:36px;font-family:'Space Mono',monospace;font-size:10px;overflow-x:auto;}
 .sb-item{display:flex;align-items:center;gap:7px;color:#475569;white-space:nowrap;}
@@ -102,7 +103,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .sb-val{color:var(--ttext);font-weight:700;}
 .sb-val.a{color:var(--amber);}.sb-val.c{color:var(--cyan);}
 .sb-sep{color:#1e2d3d;font-size:16px;}
-
+ 
 /* LOOKING FOR WORK BANNER */
 .hire-banner{
   background:linear-gradient(90deg,rgba(0,212,255,0.06) 0%,rgba(0,255,136,0.04) 100%);
@@ -126,7 +127,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
   font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;
   color:var(--cyan);font-weight:700;white-space:nowrap;
 }
-
+ 
 /* STATS */
 .stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:40px;}
 .stat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 14px;text-align:center;transition:all 0.2s;cursor:default;position:relative;overflow:hidden;}
@@ -136,12 +137,12 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .stat-num{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:5px;}
 .stat-num .acc{color:var(--cyan);}
 .stat-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-
+ 
 /* SECTION HEADER */
 .sec-head{display:flex;align-items:center;gap:12px;margin:44px 0 20px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:700;}
 .sec-head::before{content:'//';color:rgba(0,212,255,0.3);}
 .sec-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,0.2),transparent);}
-
+ 
 /* TARGET ROLES — highlighted section */
 .roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:32px;}
 .role-card{
@@ -159,7 +160,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .role-icon{font-size:20px;margin-bottom:10px;}
 .role-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .role-sub{font-size:11px;color:var(--muted);}
-
+ 
 /* ABOUT PANEL */
 .about-panel{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:8px;padding:32px 36px;margin-bottom:32px;position:relative;overflow:hidden;}
 .about-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.04) 0%,transparent 50%);pointer-events:none;}
@@ -169,7 +170,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .about-panel p{font-size:13.5px;color:#64748b;line-height:1.9;position:relative;}
 .about-panel p b{color:#94a3b8;}
 .about-panel p+p{margin-top:12px;}
-
+ 
 /* VALUE CARDS */
 .vcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:32px;}
 .vcard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 20px;transition:all 0.25s;position:relative;overflow:hidden;}
@@ -179,7 +180,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .vc-icon{font-size:22px;margin-bottom:12px;}
 .vcard h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;}
 .vcard p{font-size:12px;color:var(--muted);line-height:1.7;}
-
+ 
 /* TIMELINE */
 .timeline{display:flex;flex-direction:column;gap:0;}
 .exp-item{display:grid;grid-template-columns:160px 1fr;gap:0;}
@@ -192,7 +193,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;}
 .exp-bullets li{display:flex;gap:10px;font-size:13px;color:var(--ink2);line-height:1.7;}
 .bul{color:var(--cyan);font-size:8px;margin-top:5px;flex-shrink:0;}
-
+ 
 /* SKILLS */
 .skills-subhead{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:20px 0 10px;}
 .skills-subhead:first-child{margin-top:0;}
@@ -201,13 +202,13 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .stag:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.04);}
 .stag.primary{border-color:rgba(0,255,136,0.25);color:var(--green2);}
 .stag.primary:hover{border-color:var(--green);box-shadow:0 0 10px rgba(0,255,136,0.12);}
-
+ 
 /* LIST ITEMS */
 .list-items{display:flex;flex-direction:column;gap:10px;}
 .li-item{display:flex;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;line-height:1.7;color:var(--ink2);transition:all 0.2s;}
 .li-item:hover{border-color:rgba(0,212,255,0.3);transform:translateX(4px);}
 .li-item .d{color:var(--cyan);font-size:8px;margin-top:5px;flex-shrink:0;}
-
+ 
 /* CERTS */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;}
 .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 16px;text-align:center;transition:all 0.2s;}
@@ -219,12 +220,12 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .bdone{background:#d1fae5;color:#065f46;}
 .bprog{background:#fef3c7;color:#92400e;}
 .bplan{background:#f1f5f9;color:#64748b;}
-
+ 
 /* LANG PILLS */
 .lang-row{display:flex;flex-wrap:wrap;gap:10px;}
 .lpill{background:var(--surface);border:1px solid var(--border);border-radius:30px;padding:9px 22px;font-size:13px;color:var(--ink2);font-weight:500;}
 .llvl{font-size:11px;color:var(--muted);}
-
+ 
 /* EDU */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
 .edu-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;}
@@ -232,21 +233,21 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .edu-field{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
 .edu-inst{font-size:12px;color:var(--muted);}
 .edu-badge{display:inline-block;margin-top:12px;font-family:'Space Mono',monospace;font-size:9px;padding:4px 12px;border-radius:20px;background:rgba(0,212,255,0.08);color:var(--cyan);border:1px solid rgba(0,212,255,0.2);letter-spacing:1px;}
-
+ 
 /* NOTE */
 .note{background:var(--tbg);border:1px solid rgba(0,212,255,0.1);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:16px 20px;font-family:'Space Mono',monospace;font-size:10px;color:#475569;line-height:1.8;margin-top:40px;}
 .note::before{content:'// NOTE  ';color:var(--cyan);}
-
+ 
 /* PROJECTS */
 .proj-intro{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:8px;padding:28px 36px;margin-bottom:36px;font-size:13.5px;color:#64748b;line-height:1.85;}
 .proj-intro b{color:var(--cyan);}
-
+ 
 .cat-sec{margin-bottom:48px;}
 .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);}
 .cat-icon{font-size:16px;}
 .cat-title{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink);}
 .cat-count{margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 12px;border-radius:20px;letter-spacing:1px;}
-
+ 
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:10px;}
 .proj-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px;transition:all 0.25s;position:relative;overflow:hidden;}
 .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--green));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
@@ -265,7 +266,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .plink{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);text-decoration:none;letter-spacing:1px;border:1px solid var(--border);padding:6px 13px;border-radius:3px;transition:all 0.2s;font-weight:700;text-transform:uppercase;}
 .plink:hover{color:var(--cyan);border-color:var(--cyan);background:rgba(0,212,255,0.04);}
 .plink::after{content:'↗';margin-left:2px;}
-
+ 
 /* CAPSTONE */
 .capstone{background:linear-gradient(135deg,var(--tbg) 0%,#0d1420 100%);border:1px solid rgba(0,212,255,0.25);border-radius:10px;padding:32px 36px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,212,255,0.08);}
 .capstone::before{content:'CAPSTONE';position:absolute;top:20px;right:20px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--cyan);border:1px solid rgba(0,212,255,0.25);padding:5px 12px;border-radius:3px;font-weight:700;}
@@ -274,7 +275,7 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .capstone .ptitle{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#f8fafc;margin-bottom:10px;}
 .capstone .ptitle .hl{background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .capstone .psub{color:#475569;font-size:13px;max-width:600px;line-height:1.8;margin-bottom:18px;}
-
+ 
 /* CV */
 .cv-hero{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:10px;padding:48px;text-align:center;margin-bottom:28px;position:relative;overflow:hidden;}
 .cv-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,0.06),transparent 60%);pointer-events:none;}
@@ -285,10 +286,10 @@ header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px
 .btn-primary:hover{box-shadow:0 0 30px rgba(0,212,255,0.5);transform:translateY(-2px);}
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--cyan);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border-radius:4px;text-decoration:none;border:1px solid rgba(0,212,255,0.3);transition:all 0.2s;}
 .btn-secondary:hover{border-color:var(--cyan);background:rgba(0,212,255,0.05);}
-
+ 
 footer{background:var(--tbg);border-top:1px solid rgba(0,212,255,0.08);text-align:center;padding:26px;font-family:'Space Mono',monospace;font-size:10px;color:#334155;}
 footer .fl{color:var(--cyan);}
-
+ 
 /* LANG */
 [data-lang]{display:none;}
 body.lang-en [data-lang="en"]{display:inherit;}
@@ -296,11 +297,11 @@ body.lang-fr [data-lang="fr"]{display:inherit;}
 .en-i,.fr-i{display:none;}
 body.lang-en .en-i{display:inline;}
 body.lang-fr .fr-i{display:inline;}
-
+ 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s,transform 0.5s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-
+ 
 @media(max-width:720px){
   .header-inner{grid-template-columns:1fr;gap:24px;}
   .hterm{width:100%;}
@@ -316,14 +317,14 @@ body.lang-fr .fr-i{display:inline;}
 </style>
 </head>
 <body class="lang-en">
-
+ 
 <!-- LANG BAR -->
 <div class="lang-bar">
   <span class="lb-label"><span class="en-i">language</span><span class="fr-i">langue</span></span>
   <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇨🇦 EN</button>
   <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">🇶🇨 FR</button>
 </div>
-
+ 
 <!-- HEADER -->
 <header>
   <div class="hgrid"></div>
@@ -380,7 +381,7 @@ body.lang-fr .fr-i{display:inline;}
     </div>
   </div>
 </header>
-
+ 
 <!-- NAV -->
 <nav class="nav-tabs">
   <div class="nav-inner">
@@ -398,11 +399,11 @@ body.lang-fr .fr-i{display:inline;}
     </button>
   </div>
 </nav>
-
+ 
 <!-- ══ PROFILE ══ -->
 <div id="tab-profile" class="page-section active">
 <div class="wrap">
-
+ 
   <!-- STATUS BAR -->
   <div class="status-bar reveal">
     <div class="sb-item"><div class="sb-dot a"></div><span>OPEN TO WORK:</span><span class="sb-val a">MONTRÉAL &amp; OTTAWA</span></div>
@@ -415,7 +416,7 @@ body.lang-fr .fr-i{display:inline;}
     <div class="sb-sep">|</div>
     <div class="sb-item"><div class="sb-dot c"></div><span>THM:</span><span class="sb-val c">TOP 21%</span></div>
   </div>
-
+ 
   <!-- HIRE BANNER -->
   <div class="hire-banner reveal">
     <div class="hb-icon">🎯</div>
@@ -430,7 +431,7 @@ body.lang-fr .fr-i{display:inline;}
       </div>
     </div>
   </div>
-
+ 
   <!-- TARGET ROLES -->
   <div class="sec-head"><span class="en-i">Target Roles</span><span class="fr-i">Postes Visés</span></div>
   <div class="roles-grid reveal">
@@ -441,7 +442,7 @@ body.lang-fr .fr-i{display:inline;}
     <div class="role-card"><div class="role-icon">🗂️</div><div class="role-title"><span class="en-i">Jr. Network Administrator</span><span class="fr-i">Admin Réseau Junior</span></div><div class="role-sub"><span class="en-i">Active Directory · Windows Server</span><span class="fr-i">Active Directory · Windows Server</span></div></div>
     <div class="role-card"><div class="role-icon">🔐</div><div class="role-title"><span class="en-i">Junior SOC Analyst</span><span class="fr-i">Analyste SOC Junior</span></div><div class="role-sub"><span class="en-i">Security Operations · Monitoring</span><span class="fr-i">Opérations Sécurité · Surveillance</span></div></div>
   </div>
-
+ 
   <!-- STATS -->
   <div class="stats-grid reveal">
     <div class="stat"><div class="stat-num">2<span class="acc">+</span></div><div class="stat-label"><span class="en-i">Yrs Gov. IT</span><span class="fr-i">Ans TI Gov.</span></div></div>
@@ -451,7 +452,7 @@ body.lang-fr .fr-i{display:inline;}
     <div class="stat"><div class="stat-num">3</div><div class="stat-label"><span class="en-i">Languages</span><span class="fr-i">Langues</span></div></div>
     <div class="stat"><div class="stat-num">2</div><div class="stat-label"><span class="en-i">Cities</span><span class="fr-i">Villes</span></div></div>
   </div>
-
+ 
   <!-- ABOUT -->
   <div class="sec-head"><span class="en-i">About Me</span><span class="fr-i">À Propos</span></div>
   <div class="about-panel reveal">
@@ -469,7 +470,7 @@ body.lang-fr .fr-i{display:inline;}
       <span class="fr-i">Je termine actuellement un AEC en Cybersécurité au Collège Dawson (Montréal), avec 42 projets de laboratoire couvrant Active Directory, Windows Server, la gestion des vulnérabilités, la réponse aux incidents et la défense cyber. Mon objectif immédiat est de rejoindre une équipe TI canadienne — en apportant une expérience opérationnelle réelle et un apprentissage actif — à Montréal ou Ottawa.</span>
     </p>
   </div>
-
+ 
   <!-- VALUE CARDS -->
   <div class="vcards reveal">
     <div class="vcard"><div class="vc-icon">🏛️</div><h3><span class="en-i">Government IT Experience</span><span class="fr-i">Expérience TI Gouvernementale</span></h3><p><span class="en-i">2+ years supporting users and systems in a high-stakes operational environment — real IT work, not just labs.</span><span class="fr-i">2+ ans de soutien aux utilisateurs et systèmes dans un environnement opérationnel à enjeux élevés — travail TI réel, pas seulement des labs.</span></p></div>
@@ -477,10 +478,10 @@ body.lang-fr .fr-i{display:inline;}
     <div class="vcard"><div class="vc-icon">📡</div><h3><span class="en-i">Growing Security Skills</span><span class="fr-i">Compétences Sécurité en Croissance</span></h3><p><span class="en-i">Google Certified, TryHackMe Top 21%, CompTIA Security+ in progress — actively adding cybersecurity depth to an IT foundation.</span><span class="fr-i">Certifié Google, TryHackMe Top 21%, CompTIA Security+ en cours — ajout actif de profondeur en cybersécurité à une base TI solide.</span></p></div>
     <div class="vcard"><div class="vc-icon">🗣️</div><h3><span class="en-i">Trilingual · Montréal Ready</span><span class="fr-i">Trilingue · Prêt pour Montréal</span></h3><p><span class="en-i">English (fluent) · French A2 improving actively · Dari native — well-suited for bilingual IT environments.</span><span class="fr-i">Anglais courant · Français A2 en progression · Dari natif — bien adapté aux environnements TI bilingues.</span></p></div>
   </div>
-
+ 
   <!-- IT SKILLS -->
   <div class="sec-head"><span class="en-i">IT &amp; Infrastructure Skills</span><span class="fr-i">Compétences TI &amp; Infrastructure</span></div>
-
+ 
   <div class="skills-subhead"><span class="en-i">Core IT Support</span><span class="fr-i">Soutien TI Principal</span></div>
   <div class="skills-wrap reveal">
     <span class="stag primary">Windows 10/11</span>
@@ -496,7 +497,7 @@ body.lang-fr .fr-i{display:inline;}
     <span class="stag primary">Ticketing Systems</span>
     <span class="stag primary">Remote Desktop</span>
   </div>
-
+ 
   <div class="skills-subhead"><span class="en-i">Networking</span><span class="fr-i">Réseautage</span></div>
   <div class="skills-wrap reveal">
     <span class="stag primary">LAN/WAN</span>
@@ -508,7 +509,7 @@ body.lang-fr .fr-i{display:inline;}
     <span class="stag primary">Wireshark</span>
     <span class="stag primary">Firewall / Iptables</span>
   </div>
-
+ 
   <div class="skills-subhead"><span class="en-i">Cybersecurity (Academic)</span><span class="fr-i">Cybersécurité (Académique)</span></div>
   <div class="skills-wrap reveal">
     <span class="stag">Vulnerability Assessment</span>
@@ -524,7 +525,7 @@ body.lang-fr .fr-i{display:inline;}
     <span class="stag">NIST / ISO 27001</span>
     <span class="stag">Digital Forensics</span>
   </div>
-
+ 
   <!-- EXPERIENCE -->
   <div class="sec-head"><span class="en-i">Work Experience</span><span class="fr-i">Expérience Professionnelle</span></div>
   <div class="timeline">
@@ -559,7 +560,7 @@ body.lang-fr .fr-i{display:inline;}
       </div>
     </div>
   </div>
-
+ 
   <!-- CERTS -->
   <div class="sec-head"><span class="en-i">Certifications &amp; Development</span><span class="fr-i">Certifications &amp; Développement</span></div>
   <div class="cert-grid reveal">
@@ -568,7 +569,7 @@ body.lang-fr .fr-i{display:inline;}
     <div class="cert-card"><div class="icon">☁️</div><h4>Microsoft Azure AZ-900</h4><p><span class="en-i">Planned 2026</span><span class="fr-i">Planifié 2026</span></p><span class="badge bplan">📅 <span class="en-i">Planned</span><span class="fr-i">Planifié</span></span></div>
     <div class="cert-card"><div class="icon">🎯</div><h4>TryHackMe</h4><p>Top 21% Globally · 7 Badges</p><span class="badge bdone">✅ Active</span></div>
   </div>
-
+ 
   <!-- LANGUAGES -->
   <div class="sec-head"><span class="en-i">Languages</span><span class="fr-i">Langues</span></div>
   <div class="lang-row reveal">
@@ -576,7 +577,7 @@ body.lang-fr .fr-i{display:inline;}
     <span class="lpill">French / Français <span class="llvl">· A2 — <span class="en-i">Actively Improving</span><span class="fr-i">En Progression Active</span></span></span>
     <span class="lpill">Dari · دری <span class="llvl">· <span class="en-i">Native</span><span class="fr-i">Natif</span></span></span>
   </div>
-
+ 
   <!-- EDUCATION -->
   <div class="sec-head"><span class="en-i">Education</span><span class="fr-i">Formation</span></div>
   <div class="edu-grid reveal">
@@ -593,278 +594,149 @@ body.lang-fr .fr-i{display:inline;}
       <span class="edu-badge"><span class="en-i">QC-RECOGNIZED · 2015–2019</span><span class="fr-i">RECONNU QC · 2015–2019</span></span>
     </div>
   </div>
-
+ 
   <div class="note reveal">
     <span class="en-i">IT Support &amp; Windows Server labs are in the "IT Support Labs" tab. All 42 cybersecurity reports are in "42 Cyber Projects." Government employment records from NSIA (2019–2022) available upon request.</span>
     <span class="fr-i">Les labs de Soutien TI &amp; Windows Server sont dans l'onglet « Labs Soutien TI ». Les 42 rapports cybersécurité sont dans « 42 Projets Cyber ». Les dossiers d'emploi gouvernemental NSIA (2019–2022) disponibles sur demande.</span>
   </div>
-
+ 
 </div>
 </div>
-
+ 
 <!-- ══ IT SUPPORT LABS ══ -->
-
 <div id="tab-itprojects" class="page-section">
-
 <div class="wrap">
-
-
-
+ 
   <div class="proj-intro reveal">
-
     <span class="en-i"><b>IT Support &amp; Windows Administration lab projects</b> — completed as part of the AEC in Cybersecurity at Dawson College and through the JobSkillShare IT Support course. Each lab simulates a real workplace scenario. All work was performed in a virtual environment.</span>
-
     <span class="fr-i"><b>Projets de laboratoire Soutien TI &amp; Administration Windows</b> — complétés dans le cadre de l'AEC en Cybersécurité au Collège Dawson et du cours IT Support de JobSkillShare. Chaque laboratoire simule un scénario de milieu de travail réel. Tous les travaux ont été réalisés dans un environnement virtuel.</span>
-
   </div>
-
-
-
+ 
   <!-- PROJECT 1: WINDOWS WORKSTATION -->
-
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">🖥️</span>
-
       <span class="cat-title"><span class="en-i">Project 1 — Windows Enterprise Workstation Setup</span><span class="fr-i">Projet 1 — Configuration Poste Windows d'Entreprise</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A1</div>
-
         <div class="ptitle"><span class="en-i">Enterprise Windows 11 Workstation Deployment</span><span class="fr-i">Déploiement Poste Windows 11 d'Entreprise</span></div>
-
         <div class="psub"><span class="en-i">Clean install of Windows 11, local user creation, Remote Desktop configuration, Disk Management, BitLocker setup, Event Viewer review, and troubleshooting simulation.</span><span class="fr-i">Installation propre de Windows 11, création d'utilisateur local, configuration Remote Desktop, gestion des disques, BitLocker, revue Event Viewer et simulation de dépannage.</span></div>
-
         <div class="ptags"><span class="ptag tb">Windows 11</span><span class="ptag tg">BitLocker</span><span class="ptag ta">Event Viewer</span><span class="ptag tb">Remote Desktop</span></div>
-
-      <a href="https://github.com/salem228h/Enterprise-Windows-Administration-Lab" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
+      </div>
     </div>
-
   </div>
-
-
-
+ 
   <!-- PROJECT 2: ACTIVE DIRECTORY -->
-
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">🗂️</span>
-
       <span class="cat-title"><span class="en-i">Project 2 — Active Directory &amp; Windows Server Administration</span><span class="fr-i">Projet 2 — Administration Active Directory &amp; Windows Server</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A2</div>
-
         <div class="ptitle"><span class="en-i">Enterprise Active Directory Lab — 50-User Company</span><span class="fr-i">Lab Active Directory d'Entreprise — Entreprise de 50 Utilisateurs</span></div>
-
         <div class="psub"><span class="en-i">Full domain deployment: Windows Server, Domain Controller, Organizational Units (HR, Finance, IT), users, security groups, password policy, desktop policy via GPO, and file share configuration.</span><span class="fr-i">Déploiement de domaine complet : Windows Server, Contrôleur de Domaine, Unités Organisationnelles (RH, Finance, TI), utilisateurs, groupes, politique de mots de passe, politique bureau via GPO et configuration de partages de fichiers.</span></div>
-
         <div class="ptags"><span class="ptag tb">Active Directory</span><span class="ptag tg">Windows Server</span><span class="ptag ta">Group Policy</span><span class="ptag tb">Domain Controller</span><span class="ptag tg">OU</span></div>
-
-        <a href="https://github.com/salem228h/Active-Directory-Enterprise-Lab" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <a href="https://drive.google.com/file/d/1YSX9aZKWIw1FFhW0rc7lgvyjni-52zmD/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
       </div>
-
     </div>
-
   </div>
-
-
-
-  <!-- PROJECT 3: Modern Endpoint Management -->
-
+ 
+  <!-- PROJECT 3: FILE SERVER -->
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">📁</span>
-
       <span class="cat-title"><span class="en-i">Project 3 — File Server &amp; Network Shares</span><span class="fr-i">Projet 3 — Serveur de Fichiers &amp; Partages Réseau</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A3</div>
-
         <div class="ptitle"><span class="en-i">Enterprise File Server — Permissions &amp; Shared Folders</span><span class="fr-i">Serveur de Fichiers d'Entreprise — Permissions &amp; Dossiers Partagés</span></div>
-
         <div class="psub"><span class="en-i">Configured shared folders for HR, Finance, and IT departments with NTFS permissions, shared printers, and access control per department role.</span><span class="fr-i">Configuration de dossiers partagés pour les départements RH, Finance et TI avec permissions NTFS, imprimantes partagées et contrôle d'accès par rôle départemental.</span></div>
-
         <div class="ptags"><span class="ptag tg">File Server</span><span class="ptag tb">NTFS Permissions</span><span class="ptag ta">Shared Folders</span><span class="ptag tg">Printer</span></div>
-
-   
-
-         <a href="https://github.com/salem228h/Modern-Endpoint-Management" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
-
     </div>
-
   </div>
-
-
-
+ 
   <!-- PROJECT 4: SOFTWARE DEPLOYMENT -->
-
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">📦</span>
-
       <span class="cat-title"><span class="en-i">Project 4 — Software Deployment &amp; Patch Management</span><span class="fr-i">Projet 4 — Déploiement de Logiciels &amp; Gestion des Correctifs</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A4</div>
-
         <div class="ptitle"><span class="en-i">Enterprise Software Deployment via PDQ Deploy</span><span class="fr-i">Déploiement de Logiciels d'Entreprise via PDQ Deploy</span></div>
-
         <div class="psub"><span class="en-i">Automated deployment of Firefox, Chrome, and 7-Zip across workstations using PDQ Deploy. Patch management and Windows Update configuration for a multi-machine environment.</span><span class="fr-i">Déploiement automatisé de Firefox, Chrome et 7-Zip sur les postes de travail via PDQ Deploy. Gestion des correctifs et configuration de Windows Update pour un environnement multi-machines.</span></div>
-
         <div class="ptags"><span class="ptag tb">PDQ Deploy</span><span class="ptag tg">Software Deployment</span><span class="ptag ta">Patch Management</span><span class="ptag tg">Windows Update</span></div>
-
-
-
-         <a href="https://github.com/salem228h/Software-Deployment-Lab" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
-
     </div>
-
   </div>
-
-
-
+ 
   <!-- PROJECT 5: MICROSOFT 365 -->
-
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">☁️</span>
-
       <span class="cat-title"><span class="en-i">Project 5 — Microsoft 365 Administration</span><span class="fr-i">Projet 5 — Administration Microsoft 365</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A5</div>
-
         <div class="ptitle"><span class="en-i">Microsoft 365 Tenant Administration</span><span class="fr-i">Administration de Locataire Microsoft 365</span></div>
-
         <div class="psub"><span class="en-i">User and group management, MFA configuration, Outlook setup, password reset procedures, and remote support workflow in Microsoft 365 Admin Center.</span><span class="fr-i">Gestion des utilisateurs et groupes, configuration MFA, configuration Outlook, procédures de réinitialisation de mot de passe et flux de travail de soutien à distance dans le Centre d'administration Microsoft 365.</span></div>
-
         <div class="ptags"><span class="ptag tb">Microsoft 365</span><span class="ptag tg">MFA</span><span class="ptag ta">Outlook</span><span class="ptag tb">Admin Center</span></div>
-
-
-
-         <a href="https://github.com/salem228h/Microsoft365-Administration-Lab" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
-
     </div>
-
   </div>
-
-
-
+ 
   <!-- PROJECT 6: HELP DESK KB -->
-
   <div class="cat-sec reveal">
-
     <div class="cat-head">
-
       <span class="cat-icon">🎧</span>
-
       <span class="cat-title"><span class="en-i">Project 6 — Help Desk Knowledge Base</span><span class="fr-i">Projet 6 — Base de Connaissances Centre d'Aide</span></span>
-
-      <span class="cat-count">COMPLETE</span>
-
+      <span class="cat-count">IN PROGRESS</span>
     </div>
-
     <div class="proj-grid">
-
       <div class="proj-card">
-
         <div class="pnum">LAB · A6</div>
-
         <div class="ptitle"><span class="en-i">IT Help Desk Knowledge Base — 30 Real Scenarios</span><span class="fr-i">Base de Connaissances Centre d'Aide TI — 30 Scénarios Réels</span></div>
-
         <div class="psub"><span class="en-i">Documented solutions to 30+ common IT issues: User Locked Out, DNS Resolution Failure, Printer Offline, VPN Connection Failed, Outlook Crash, Windows Update Stuck, Slow Computer, Blue Screen, No Internet, Password Reset, and more.</span><span class="fr-i">Solutions documentées pour 30+ problèmes TI courants : Utilisateur Bloqué, Échec DNS, Imprimante Hors Ligne, VPN Échoué, Crash Outlook, Windows Update Bloqué, Ordinateur Lent, Écran Bleu, Pas d'Internet, Réinitialisation de Mot de Passe, et plus.</span></div>
-
         <div class="ptags"><span class="ptag tg">Help Desk</span><span class="ptag tb">Troubleshooting</span><span class="ptag ta">Knowledge Base</span><span class="ptag tg">30+ Scenarios</span></div>
-
-
-
-        <a href="https://github.com/salem228h/Enterprise-HelpDesk-Lab" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
-
     </div>
-
   </div>
-
-
-
+ 
   <div class="note reveal">
-
     <span class="en-i">Projects 1, 3, 4, 5, and 6 are in progress as part of the JobSkillShare IT Support course. Reports will be published here as each project is completed. Project 2 (Active Directory) is already available above.</span>
-
     <span class="fr-i">Les projets 1, 3, 4, 5 et 6 sont en cours dans le cadre du cours IT Support de JobSkillShare. Les rapports seront publiés ici au fur et à mesure de leur complétion. Le projet 2 (Active Directory) est déjà disponible ci-dessus.</span>
-
   </div>
-
-
-
+ 
 </div>
-
 </div>
-
+ 
 <!-- ══ 42 CYBER PROJECTS ══ -->
 <div id="tab-projects" class="page-section">
 <div class="wrap">
-
+ 
   <div class="proj-intro reveal">
     <span class="en-i"><b>42 hands-on cybersecurity lab projects</b> completed as part of the AEC in Cybersecurity at Dawson College (2025–Present). Each project is a full PDF report. All labs performed in a virtual environment. Organized across 6 professional security domains.</span>
     <span class="fr-i"><b>42 projets de laboratoire pratiques en cybersécurité</b> complétés dans le cadre de l'AEC en Cybersécurité au Collège Dawson (2025–Présent). Chaque projet est un rapport PDF complet. Tous les labs réalisés en environnement virtuel. Organisés sur 6 domaines de sécurité professionnels.</span>
   </div>
-
+ 
   <!-- THREATS -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">⚠️</span><span class="cat-title"><span class="en-i">Threats &amp; Risks</span><span class="fr-i">Menaces &amp; Risques</span></span><span class="cat-count">1</span></div>
@@ -872,7 +744,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 01</div><div class="ptitle"><span class="en-i">Hosting &amp; Monitoring a Containerized Flask Application</span><span class="fr-i">Hébergement &amp; Surveillance Application Flask Conteneurisée</span></div><div class="psub"><span class="en-i">Docker and Wazuh for Cloud-Native Security</span><span class="fr-i">Docker et Wazuh pour la Sécurité Cloud-Native</span></div><div class="ptags"><span class="ptag tb">Docker</span><span class="ptag tg">Wazuh</span><span class="ptag ta">Flask</span><span class="ptag tg">SIEM</span></div><a href="https://drive.google.com/file/d/1e3p6MYlzXe1alyCJylBzSURtEzNo9ryK/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- VULNERABILITIES -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">🔍</span><span class="cat-title"><span class="en-i">Managing Vulnerabilities</span><span class="fr-i">Gestion des Vulnérabilités</span></span><span class="cat-count">9</span></div>
@@ -888,7 +760,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 10</div><div class="ptitle"><span class="en-i">Web Application Scanning with OWASP ZAP</span><span class="fr-i">Analyse Web avec OWASP ZAP</span></div><div class="psub"><span class="en-i">Automated and manual web app vulnerability scanning.</span><span class="fr-i">Analyse automatisée et manuelle des vulnérabilités web.</span></div><div class="ptags"><span class="ptag tr">OWASP ZAP</span><span class="ptag ta">Web Security</span><span class="ptag tb">DAST</span></div><a href="https://drive.google.com/file/d/11HOiGpGKutwe7I946IKk2wg3cWhExBiF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- INTRUSION -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">💀</span><span class="cat-title"><span class="en-i">Intrusion Testing</span><span class="fr-i">Tests d'Intrusion</span></span><span class="cat-count">6</span></div>
@@ -901,7 +773,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 16</div><div class="ptitle"><span class="en-i">DVWA &amp; OWASP Juice Shop Exploitation</span><span class="fr-i">Exploitation DVWA &amp; OWASP Juice Shop</span></div><div class="psub"><span class="en-i">OWASP Top 10 in intentionally vulnerable applications.</span><span class="fr-i">Top 10 OWASP dans des applications intentionnellement vulnérables.</span></div><div class="ptags"><span class="ptag tr">DVWA</span><span class="ptag ta">Juice Shop</span><span class="ptag tb">OWASP Top 10</span></div><a href="https://drive.google.com/file/d/16Us2gk-qler7fNBzWm0x-f3IJyqxjdyI/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- INCIDENT HANDLING -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">🚨</span><span class="cat-title"><span class="en-i">Incident Handling &amp; Security Concepts</span><span class="fr-i">Gestion des Incidents &amp; Concepts de Sécurité</span></span><span class="cat-count">7</span></div>
@@ -915,7 +787,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 23</div><div class="ptitle"><span class="en-i">Network Traffic Analysis &amp; Incident Validation</span><span class="fr-i">Analyse Trafic Réseau &amp; Validation</span></div><div class="psub"><span class="en-i">Wireshark traffic capture, anomaly detection, incident validation.</span><span class="fr-i">Capture Wireshark, détection d'anomalies et validation d'incidents.</span></div><div class="ptags"><span class="ptag tb">Wireshark</span><span class="ptag ta">Traffic Analysis</span><span class="ptag tg">Validation</span></div><a href="https://drive.google.com/file/d/1diCPt1Iq7ThZ448DViNTb1SNbVolXCBS/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- COMPLIANCE -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">📋</span><span class="cat-title"><span class="en-i">Legislation &amp; Compliance</span><span class="fr-i">Législation &amp; Conformité</span></span><span class="cat-count">12</span></div>
@@ -933,7 +805,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 35</div><div class="ptitle"><span class="en-i">International Compliance — Conflict Resolution</span><span class="fr-i">Conformité Internationale — Résolution de Conflits</span></div><div class="psub"><span class="en-i">Multi-jurisdictional conflict resolution and risk prioritization.</span><span class="fr-i">Résolution de conflits multi-juridictionnels et priorisation des risques.</span></div><div class="ptags"><span class="ptag tb">ICM</span><span class="ptag ta">Risk Priority</span></div><a href="https://drive.google.com/file/d/1lOFDrcDfGlbQS8lnJLWdfmnkNMzl9Pvo/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- CYBER DEFENCE -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">🛡️</span><span class="cat-title"><span class="en-i">Cyber Defence</span><span class="fr-i">Défense Cyber</span></span><span class="cat-count">6</span></div>
@@ -945,7 +817,7 @@ body.lang-fr .fr-i{display:inline;}
       <div class="proj-card"><div class="pnum"># 41</div><div class="ptitle"><span class="en-i">SIEM &amp; XDR Implementation — Wazuh</span><span class="fr-i">Implémentation SIEM &amp; XDR — Wazuh</span></div><div class="psub"><span class="en-i">Full SIEM deployment, agent config, and XDR detection rules.</span><span class="fr-i">Déploiement SIEM complet, configuration d'agents et règles XDR.</span></div><div class="ptags"><span class="ptag tg">Wazuh</span><span class="ptag tb">SIEM</span><span class="ptag ta">XDR</span></div><a href="https://drive.google.com/file/d/1LCx2Kt4XyxIAZDmoZG4K2jJA9-flMIHt/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
-
+ 
   <!-- CAPSTONE -->
   <div class="cat-sec reveal">
     <div class="cat-head"><span class="cat-icon">🏆</span><span class="cat-title"><span class="en-i">Capstone Project</span><span class="fr-i">Projet Capstone</span></span><span class="cat-count">FINAL</span></div>
@@ -964,10 +836,10 @@ body.lang-fr .fr-i{display:inline;}
       </div>
     </div>
   </div>
-
+ 
 </div>
 </div>
-
+ 
 <!-- ══ CV ══ -->
 <div id="tab-cv" class="page-section">
 <div class="wrap">
@@ -990,11 +862,11 @@ body.lang-fr .fr-i{display:inline;}
   </div>
 </div>
 </div>
-
+ 
 <footer>
   <span class="fl">salem@hassani</span> · it support &amp; cybersecurity · dawson college aec · montréal &amp; ottawa · <span class="fl">linkedin.com/in/salem786</span>
 </footer>
-
+ 
 <script>
 function setLang(l){
   document.body.className=document.body.className.replace(/lang-\w+/g,'')+'lang-'+l;
@@ -1022,3 +894,4 @@ document.addEventListener('DOMContentLoaded',doReveal);
 </script>
 </body>
 </html>
+ 
