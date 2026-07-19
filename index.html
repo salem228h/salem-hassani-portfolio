@@ -3,350 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salem Hassani — IT Support &amp; Cybersecurity</title>
+<title>Salem Hassani — IT Support Technician · Montréal / Ottawa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f0f2f5;
-  --surface: #ffffff;
-  --surface2: #f7f8fa;
-  --ink: #0a0e17;
-  --ink2: #1e2535;
-  --muted: #64748b;
-  --cyan: #00d4ff;
-  --cyan2: #00a8cc;
-  --green: #00ff88;
-  --green2: #00cc6a;
-  --amber: #ffaa00;
-  --red: #ff4455;
-  --border: #e1e5ef;
-  --border2: rgba(0,212,255,0.15);
-  --terminal-bg: #0d1117;
-  --terminal-text: #00ff88;
-  --card-shadow: 0 2px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
-  --glow-cyan: 0 0 20px rgba(0,212,255,0.3);
-  --glow-green: 0 0 20px rgba(0,255,136,0.3);
+  --bg:#f0f2f5;--surface:#fff;--surface2:#f7f8fa;
+  --ink:#0a0e17;--ink2:#1e2535;--muted:#64748b;
+  --cyan:#00d4ff;--cyan2:#00a8cc;
+  --green:#00ff88;--green2:#00cc6a;
+  --amber:#ffaa00;--red:#ff4455;
+  --border:#e1e5ef;
+  --tbg:#0d1117;--ttext:#00ff88;
+  --glow-c:0 0 20px rgba(0,212,255,0.3);
+  --glow-g:0 0 20px rgba(0,255,136,0.3);
 }
-
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.6;
-  overflow-x:hidden;
-}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;}
 
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background:repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,0,0,0.012) 2px,
-    rgba(0,0,0,0.012) 4px
-  );
-  pointer-events:none;
-  z-index:9999;
-}
+/* scanlines */
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.012) 2px,rgba(0,0,0,0.012) 4px);pointer-events:none;z-index:9999;}
+/* grid */
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
 
-body::after{
-  content:'';
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);
-  background-size:40px 40px;
-  pointer-events:none;
-  z-index:0;
-}
-
-.lang-bar{
-  background:var(--terminal-bg);
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:6px;
-  padding:8px 28px;
-  border-bottom:1px solid rgba(0,212,255,0.1);
-  position:relative;
-  z-index:200;
-}
-.lb-label{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:2px;
-  color:#334155;
-  text-transform:uppercase;
-  margin-right:12px;
-}
+/* LANG BAR */
+.lang-bar{background:var(--tbg);display:flex;justify-content:flex-end;align-items:center;gap:6px;padding:8px 28px;border-bottom:1px solid rgba(0,212,255,0.1);position:relative;z-index:200;}
+.lb-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#334155;text-transform:uppercase;margin-right:12px;}
 .lb-label::before{content:'> ';color:var(--cyan);}
-.lang-btn{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  background:transparent;
-  border:1px solid rgba(0,212,255,0.15);
-  border-radius:3px;
-  padding:5px 14px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:2px;
-  color:#475569;
-  cursor:pointer;
-  font-family:'Space Mono',monospace;
-  transition:all 0.2s;
-  text-transform:uppercase;
-}
+.lang-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(0,212,255,0.15);border-radius:3px;padding:5px 14px;font-size:10px;font-weight:700;letter-spacing:2px;color:#475569;cursor:pointer;font-family:'Space Mono',monospace;transition:all 0.2s;text-transform:uppercase;}
 .lang-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.05);}
 .lang-btn.active{background:rgba(0,212,255,0.08);border-color:var(--cyan);color:var(--cyan);}
 
-header{
-  background:var(--terminal-bg);
-  position:relative;
-  overflow:hidden;
-  padding:60px 40px 50px;
-  border-bottom:1px solid rgba(0,212,255,0.1);
-}
+/* HEADER */
+header{background:var(--tbg);position:relative;overflow:hidden;padding:60px 40px 50px;border-bottom:1px solid rgba(0,212,255,0.1);}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.06) 1px,transparent 1px);background-size:30px 30px;animation:gridShift 20s linear infinite;pointer-events:none;}
+@keyframes gridShift{from{background-position:0 0;}to{background-position:30px 30px;}}
+.orb1{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,255,0.08) 0%,transparent 65%);top:-100px;right:-100px;pointer-events:none;animation:orb 8s ease-in-out infinite alternate;}
+.orb2{position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(0,255,136,0.06) 0%,transparent 65%);bottom:-80px;left:200px;pointer-events:none;animation:orb 10s ease-in-out infinite alternate-reverse;}
+@keyframes orb{from{transform:translate(0,0) scale(1);}to{transform:translate(20px,-20px) scale(1.05);}}
 
-.header-noise{
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  opacity:0.6;
-  pointer-events:none;
-}
+.header-inner{max-width:1060px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;}
 
-.header-grid{
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(0,212,255,0.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,0.06) 1px,transparent 1px);
-  background-size:30px 30px;
-  animation:gridShift 20s linear infinite;
-  pointer-events:none;
-}
-@keyframes gridShift{
-  from{background-position:0 0;}
-  to{background-position:30px 30px;}
-}
-
-.orb1{
-  position:absolute;
-  width:400px;height:400px;
-  background:radial-gradient(circle,rgba(0,212,255,0.08) 0%,transparent 65%);
-  top:-100px;right:-100px;
-  pointer-events:none;
-  animation:orb 8s ease-in-out infinite alternate;
-}
-.orb2{
-  position:absolute;
-  width:300px;height:300px;
-  background:radial-gradient(circle,rgba(0,255,136,0.06) 0%,transparent 65%);
-  bottom:-80px;left:200px;
-  pointer-events:none;
-  animation:orb 10s ease-in-out infinite alternate-reverse;
-}
-@keyframes orb{
-  from{transform:translate(0,0) scale(1);}
-  to{transform:translate(20px,-20px) scale(1.05);}
-}
-
-.header-inner{
-  max-width:1060px;
-  margin:0 auto;
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:40px;
-  align-items:start;
-}
-
-.header-terminal{
-  background:rgba(0,0,0,0.5);
-  border:1px solid rgba(0,212,255,0.15);
-  border-radius:6px;
-  width:280px;
-  overflow:hidden;
-  flex-shrink:0;
-  backdrop-filter:blur(10px);
-}
-.terminal-bar{
-  background:rgba(255,255,255,0.04);
-  padding:8px 14px;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  border-bottom:1px solid rgba(0,212,255,0.08);
-}
-.t-dot{width:10px;height:10px;border-radius:50%;}
-.t-dot.r{background:#ff5f56;}
-.t-dot.y{background:#ffbd2e;}
-.t-dot.g{background:#27c93f;}
-.terminal-title{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  color:#334155;
-  margin-left:6px;
-  letter-spacing:1px;
-}
-.terminal-body{
-  padding:16px;
-  font-family:'Space Mono',monospace;
-  font-size:11px;
-  line-height:2;
-}
-.t-line{color:#475569;}
-.t-cmd{color:var(--cyan);}
-.t-cmd::before{content:'$ ';color:#334155;}
-.t-out{color:var(--terminal-text);}
-.t-out.w{color:var(--amber);}
-.t-out.c{color:var(--cyan);}
-.t-cursor{
-  display:inline-block;
-  width:8px;height:13px;
-  background:var(--cyan);
-  vertical-align:middle;
-  animation:blink 1.1s step-end infinite;
-  margin-left:2px;
-}
+/* Terminal widget */
+.hterm{background:rgba(0,0,0,0.5);border:1px solid rgba(0,212,255,0.15);border-radius:6px;width:280px;overflow:hidden;backdrop-filter:blur(10px);}
+.tbar{background:rgba(255,255,255,0.04);padding:8px 14px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(0,212,255,0.08);}
+.td{width:10px;height:10px;border-radius:50%;}
+.td.r{background:#ff5f56;}.td.y{background:#ffbd2e;}.td.g{background:#27c93f;}
+.ttitle{font-family:'Space Mono',monospace;font-size:9px;color:#334155;margin-left:6px;letter-spacing:1px;}
+.tbody{padding:16px;font-family:'Space Mono',monospace;font-size:11px;line-height:2;}
+.tcmd{color:var(--cyan);}
+.tcmd::before{content:'$ ';color:#334155;}
+.tout{color:var(--ttext);}
+.tout.w{color:var(--amber);}.tout.c{color:var(--cyan);}
+.tcursor{display:inline-block;width:8px;height:13px;background:var(--cyan);vertical-align:middle;animation:blink 1.1s step-end infinite;margin-left:2px;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 
-.header-left{}
-.eyebrow{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--cyan);
-  margin-bottom:16px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
 .eyebrow::before{content:'[SYS]';color:#334155;}
+.hname{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.05;color:#f8fafc;letter-spacing:-1px;margin-bottom:6px;}
+.hname .hl{background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hsub{font-family:'Space Mono',monospace;font-size:11px;color:#475569;margin-bottom:22px;letter-spacing:0.5px;}
 
-.hname{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(34px,5vw,58px);
-  font-weight:800;
-  line-height:1.05;
-  color:#f8fafc;
-  letter-spacing:-1px;
-  margin-bottom:6px;
-}
-.hname .hl{
-  background:linear-gradient(90deg,var(--cyan),var(--green));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.hsub{
-  font-family:'Space Mono',monospace;
-  font-size:11px;
-  color:#475569;
-  margin-bottom:22px;
-  letter-spacing:0.5px;
-}
-.hsub span{color:#64748b;}
-
-.contact-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-bottom:24px;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-}
-.contact-row a,.contact-row .ci{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#475569;
-  text-decoration:none;
-  transition:color 0.2s;
-  letter-spacing:0.3px;
-}
+.contact-row{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:24px;font-family:'Space Mono',monospace;font-size:10px;}
+.contact-row a,.ci{display:flex;align-items:center;gap:8px;color:#475569;text-decoration:none;transition:color 0.2s;}
 .contact-row a:hover{color:var(--cyan);}
 .ci-icon{color:var(--cyan);font-size:12px;}
 
-.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
-.hbadge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:rgba(0,212,255,0.06);
-  border:1px solid rgba(0,212,255,0.18);
-  border-radius:3px;
-  padding:6px 14px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:var(--cyan);
-  font-weight:700;
-  transition:all 0.2s;
-}
-.hbadge:hover{background:rgba(0,212,255,0.1);box-shadow:var(--glow-cyan);}
-.hbadge.green{background:rgba(0,255,136,0.06);border-color:rgba(0,255,136,0.18);color:var(--green);}
-.hbadge.green:hover{box-shadow:var(--glow-green);}
-.pulse{
-  width:5px;height:5px;border-radius:50%;
-  background:var(--cyan);
-  animation:pulse 2s infinite;
-}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.18);border-radius:3px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);font-weight:700;transition:all 0.2s;}
+.hbadge:hover{background:rgba(0,212,255,0.1);box-shadow:var(--glow-c);}
+.hbadge.g{background:rgba(0,255,136,0.06);border-color:rgba(0,255,136,0.18);color:var(--green);}
+.hbadge.g:hover{box-shadow:var(--glow-g);}
+.hbadge.amber{background:rgba(255,170,0,0.06);border-color:rgba(255,170,0,0.25);color:var(--amber);}
+.pulse{width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
 .pulse.g{background:var(--green);}
+.pulse.a{background:var(--amber);}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.6);}}
 
-.nav-tabs{
-  background:var(--surface);
-  position:sticky;
-  top:0;
-  z-index:100;
-  border-bottom:2px solid var(--border);
-  box-shadow:0 2px 20px rgba(0,0,0,0.05);
-}
-.nav-inner{
-  max-width:1060px;
-  margin:0 auto;
-  display:flex;
-  align-items:stretch;
-  overflow-x:auto;
-}
-.nav-tab{
-  padding:16px 30px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:var(--muted);
-  cursor:pointer;
-  border:none;
-  background:none;
-  border-bottom:2px solid transparent;
-  margin-bottom:-2px;
-  white-space:nowrap;
-  font-weight:700;
-  transition:all 0.2s;
-  position:relative;
-}
-.nav-tab::before{
-  content:attr(data-num);
-  position:absolute;
-  left:14px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:8px;
-  color:rgba(0,212,255,0.3);
-}
+/* NAV */
+.nav-tabs{background:var(--surface);position:sticky;top:0;z-index:100;border-bottom:2px solid var(--border);box-shadow:0 2px 20px rgba(0,0,0,0.05);}
+.nav-inner{max-width:1060px;margin:0 auto;display:flex;align-items:stretch;overflow-x:auto;}
+.nav-tab{padding:14px 22px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;font-weight:700;transition:all 0.2s;}
 .nav-tab:hover{color:var(--ink);border-bottom-color:rgba(0,212,255,0.3);}
 .nav-tab.active{color:var(--ink);border-bottom-color:var(--cyan);}
 
@@ -356,552 +94,202 @@ header{
 
 .wrap{max-width:1060px;margin:0 auto;padding:48px 24px 100px;position:relative;z-index:1;}
 
-.status-bar{
-  background:var(--terminal-bg);
-  border:1px solid rgba(0,212,255,0.1);
-  border-radius:6px;
-  padding:12px 20px;
+/* STATUS BAR */
+.status-bar{background:var(--tbg);border:1px solid rgba(0,212,255,0.1);border-radius:6px;padding:12px 20px;display:flex;align-items:center;gap:18px;margin-bottom:36px;font-family:'Space Mono',monospace;font-size:10px;overflow-x:auto;}
+.sb-item{display:flex;align-items:center;gap:7px;color:#475569;white-space:nowrap;}
+.sb-dot{width:6px;height:6px;border-radius:50%;background:var(--ttext);}
+.sb-dot.a{background:var(--amber);}.sb-dot.c{background:var(--cyan);}
+.sb-val{color:var(--ttext);font-weight:700;}
+.sb-val.a{color:var(--amber);}.sb-val.c{color:var(--cyan);}
+.sb-sep{color:#1e2d3d;font-size:16px;}
+
+/* LOOKING FOR WORK BANNER */
+.hire-banner{
+  background:linear-gradient(90deg,rgba(0,212,255,0.06) 0%,rgba(0,255,136,0.04) 100%);
+  border:1px solid rgba(0,212,255,0.2);
+  border-left:4px solid var(--cyan);
+  border-radius:0 8px 8px 0;
+  padding:18px 24px;
+  margin-bottom:36px;
   display:flex;
   align-items:center;
   gap:20px;
-  margin-bottom:36px;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  overflow-x:auto;
+  flex-wrap:wrap;
 }
-.sb-item{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#475569;
-  white-space:nowrap;
+.hb-icon{font-size:22px;flex-shrink:0;}
+.hb-text{font-size:14px;color:var(--ink2);line-height:1.6;flex:1;}
+.hb-text strong{color:var(--ink);font-weight:700;}
+.hb-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--surface);border:1px solid rgba(0,212,255,0.25);
+  border-radius:20px;padding:6px 16px;
+  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;
+  color:var(--cyan);font-weight:700;white-space:nowrap;
 }
-.sb-dot{width:6px;height:6px;border-radius:50%;background:var(--terminal-text);}
-.sb-dot.a{background:var(--amber);}
-.sb-dot.c{background:var(--cyan);}
-.sb-val{color:var(--terminal-text);font-weight:700;}
-.sb-val.a{color:var(--amber);}
-.sb-val.c{color:var(--cyan);}
-.sb-sep{color:#1e2d3d;font-size:16px;}
 
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:12px;
-  margin-bottom:40px;
-}
-.stat{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:20px 14px;
-  text-align:center;
-  transition:all 0.2s;
-  cursor:default;
-  position:relative;
-  overflow:hidden;
-}
-.stat::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:2px;
-  background:linear-gradient(90deg,var(--cyan),var(--green));
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.3s;
-}
-.stat:hover{border-color:rgba(0,212,255,0.3);box-shadow:var(--glow-cyan);}
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:40px;}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 14px;text-align:center;transition:all 0.2s;cursor:default;position:relative;overflow:hidden;}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--green));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.stat:hover{border-color:rgba(0,212,255,0.3);box-shadow:var(--glow-c);}
 .stat:hover::before{transform:scaleX(1);}
-.stat-num{
-  font-family:'Syne',sans-serif;
-  font-size:32px;
-  font-weight:800;
-  color:var(--ink);
-  line-height:1;
-  margin-bottom:5px;
-}
+.stat-num{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:5px;}
 .stat-num .acc{color:var(--cyan);}
-.stat-label{
-  font-family:'Space Mono',monospace;
-  font-size:8px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:var(--muted);
-}
+.stat-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
 
-.sec-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin:44px 0 20px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--cyan);
-  font-weight:700;
-}
+/* SECTION HEADER */
+.sec-head{display:flex;align-items:center;gap:12px;margin:44px 0 20px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:700;}
 .sec-head::before{content:'//';color:rgba(0,212,255,0.3);}
 .sec-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,0.2),transparent);}
 
-.about-panel{
-  background:var(--terminal-bg);
-  border:1px solid rgba(0,212,255,0.12);
-  border-radius:8px;
-  padding:36px 40px;
-  margin-bottom:32px;
-  position:relative;
-  overflow:hidden;
-}
-.about-panel::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(0,212,255,0.04) 0%,transparent 50%);
-  pointer-events:none;
-}
-.ap-quote{
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  color:rgba(0,212,255,0.3);
-  margin-bottom:14px;
-}
-.about-panel h2{
-  font-family:'Syne',sans-serif;
-  font-size:20px;
-  font-weight:700;
-  color:#f8fafc;
-  margin-bottom:14px;
-  line-height:1.3;
-}
-.about-panel h2 .hl{color:var(--cyan);}
-.about-panel p{font-size:13.5px;color:#64748b;line-height:1.9;position:relative;}
-.about-panel p b{color:#94a3b8;}
-.about-panel p + p{margin-top:14px;}
-
-.vcards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px;
-  margin-bottom:32px;
-}
-.vcard{
+/* TARGET ROLES — highlighted section */
+.roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:32px;}
+.role-card{
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:8px;
-  padding:22px 20px;
+  padding:18px 20px;
   transition:all 0.25s;
   position:relative;
   overflow:hidden;
 }
-.vcard::after{
-  content:'';
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:3px;
-  background:linear-gradient(180deg,var(--cyan),var(--green));
-  transform:scaleY(0);
-  transition:transform 0.25s;
-}
+.role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--green));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.role-card:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,212,255,0.08);}
+.role-card:hover::before{transform:scaleX(1);}
+.role-icon{font-size:20px;margin-bottom:10px;}
+.role-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.role-sub{font-size:11px;color:var(--muted);}
+
+/* ABOUT PANEL */
+.about-panel{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:8px;padding:32px 36px;margin-bottom:32px;position:relative;overflow:hidden;}
+.about-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.04) 0%,transparent 50%);pointer-events:none;}
+.ap-quote{font-family:'Space Mono',monospace;font-size:10px;color:rgba(0,212,255,0.3);margin-bottom:12px;}
+.about-panel h2{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:#f8fafc;margin-bottom:12px;line-height:1.3;}
+.about-panel h2 .hl{color:var(--cyan);}
+.about-panel p{font-size:13.5px;color:#64748b;line-height:1.9;position:relative;}
+.about-panel p b{color:#94a3b8;}
+.about-panel p+p{margin-top:12px;}
+
+/* VALUE CARDS */
+.vcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:32px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 20px;transition:all 0.25s;position:relative;overflow:hidden;}
+.vcard::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cyan),var(--green));transform:scaleY(0);transition:transform 0.25s;}
 .vcard:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.25);}
 .vcard:hover::after{transform:scaleY(1);}
 .vc-icon{font-size:22px;margin-bottom:12px;}
 .vcard h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;}
 .vcard p{font-size:12px;color:var(--muted);line-height:1.7;}
 
+/* TIMELINE */
 .timeline{display:flex;flex-direction:column;gap:0;}
 .exp-item{display:grid;grid-template-columns:160px 1fr;gap:0;}
-.exp-left{
-  padding:24px 20px 24px 0;
-  text-align:right;
-}
-.exp-dates{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  color:var(--cyan);
-  font-weight:700;
-  letter-spacing:1.5px;
-  margin-bottom:5px;
-}
+.exp-left{padding:24px 20px 24px 0;text-align:right;}
+.exp-dates{font-family:'Space Mono',monospace;font-size:9px;color:var(--cyan);font-weight:700;letter-spacing:1.5px;margin-bottom:5px;}
 .exp-org{font-size:11px;color:var(--muted);line-height:1.6;}
-.exp-right{
-  padding:22px 0 28px 28px;
-  border-left:1px solid var(--border);
-  position:relative;
-}
-.exp-right::before{
-  content:'';
-  position:absolute;
-  left:-5px;top:28px;
-  width:9px;height:9px;
-  border-radius:50%;
-  background:var(--cyan);
-  border:2px solid var(--bg);
-  box-shadow:0 0 12px rgba(0,212,255,0.5);
-}
-.exp-role{
-  font-family:'Syne',sans-serif;
-  font-size:18px;
-  font-weight:700;
-  color:var(--ink);
-  margin-bottom:14px;
-}
+.exp-right{padding:22px 0 28px 28px;border-left:1px solid var(--border);position:relative;}
+.exp-right::before{content:'';position:absolute;left:-5px;top:28px;width:9px;height:9px;border-radius:50%;background:var(--cyan);border:2px solid var(--bg);box-shadow:0 0 12px rgba(0,212,255,0.5);}
+.exp-role{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:14px;}
 .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;}
 .exp-bullets li{display:flex;gap:10px;font-size:13px;color:var(--ink2);line-height:1.7;}
 .bul{color:var(--cyan);font-size:8px;margin-top:5px;flex-shrink:0;}
 
+/* SKILLS */
+.skills-subhead{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:20px 0 10px;}
+.skills-subhead:first-child{margin-top:0;}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px;}
+.stag{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:7px 13px;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);transition:all 0.2s;}
+.stag:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.04);}
+.stag.primary{border-color:rgba(0,255,136,0.25);color:var(--green2);}
+.stag.primary:hover{border-color:var(--green);box-shadow:0 0 10px rgba(0,255,136,0.12);}
+
+/* LIST ITEMS */
 .list-items{display:flex;flex-direction:column;gap:10px;}
-.li-item{
-  display:flex;
-  gap:14px;
-  padding:16px 18px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:6px;
-  font-size:13px;
-  line-height:1.7;
-  color:var(--ink2);
-  transition:all 0.2s;
-}
+.li-item{display:flex;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;line-height:1.7;color:var(--ink2);transition:all 0.2s;}
 .li-item:hover{border-color:rgba(0,212,255,0.3);transform:translateX(4px);}
 .li-item .d{color:var(--cyan);font-size:8px;margin-top:5px;flex-shrink:0;}
 
+/* CERTS */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;}
-.cert-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:22px 16px;
-  text-align:center;
-  transition:all 0.2s;
-}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 16px;text-align:center;transition:all 0.2s;}
 .cert-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
 .cert-card .icon{font-size:26px;margin-bottom:10px;}
 .cert-card h4{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:5px;}
 .cert-card p{font-size:11px;color:var(--muted);margin-bottom:12px;}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  font-weight:700;
-  padding:4px 12px;
-  border-radius:20px;
-  letter-spacing:0.5px;
-}
+.badge{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.5px;}
 .bdone{background:#d1fae5;color:#065f46;}
 .bprog{background:#fef3c7;color:#92400e;}
 .bplan{background:#f1f5f9;color:#64748b;}
 
-.skills-wrap{display:flex;flex-wrap:wrap;gap:7px;}
-.stag{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:3px;
-  padding:7px 13px;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  color:var(--muted);
-  transition:all 0.2s;
-  letter-spacing:0.3px;
-}
-.stag:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.04);box-shadow:0 0 10px rgba(0,212,255,0.1);}
-.stag.primary{border-color:rgba(0,255,136,0.3);color:var(--green2);}
-.stag.primary:hover{border-color:var(--green);color:var(--green2);box-shadow:0 0 10px rgba(0,255,136,0.12);}
-
-.skills-subhead{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin:20px 0 10px;
-}
-.skills-subhead:first-child{margin-top:0;}
-
+/* LANG PILLS */
 .lang-row{display:flex;flex-wrap:wrap;gap:10px;}
-.lpill{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:30px;
-  padding:9px 22px;
-  font-size:13px;
-  color:var(--ink2);
-  font-weight:500;
-}
+.lpill{background:var(--surface);border:1px solid var(--border);border-radius:30px;padding:9px 22px;font-size:13px;color:var(--ink2);font-weight:500;}
 .llvl{font-size:11px;color:var(--muted);}
 
+/* EDU */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
 .edu-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;}
-.edu-deg{
-  font-family:'Syne',sans-serif;
-  font-size:36px;font-weight:800;
-  color:var(--cyan);
-  line-height:1;
-  margin-bottom:8px;
-}
+.edu-deg{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--cyan);line-height:1;margin-bottom:8px;}
 .edu-field{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
 .edu-inst{font-size:12px;color:var(--muted);}
-.edu-badge{
-  display:inline-block;
-  margin-top:12px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  padding:4px 12px;
-  border-radius:20px;
-  background:rgba(0,212,255,0.08);
-  color:var(--cyan);
-  border:1px solid rgba(0,212,255,0.2);
-  letter-spacing:1px;
-}
+.edu-badge{display:inline-block;margin-top:12px;font-family:'Space Mono',monospace;font-size:9px;padding:4px 12px;border-radius:20px;background:rgba(0,212,255,0.08);color:var(--cyan);border:1px solid rgba(0,212,255,0.2);letter-spacing:1px;}
 
-.note{
-  background:var(--terminal-bg);
-  border:1px solid rgba(0,212,255,0.1);
-  border-left:3px solid var(--cyan);
-  border-radius:0 6px 6px 0;
-  padding:16px 20px;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  color:#475569;
-  line-height:1.8;
-  margin-top:40px;
-  letter-spacing:0.3px;
-}
+/* NOTE */
+.note{background:var(--tbg);border:1px solid rgba(0,212,255,0.1);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:16px 20px;font-family:'Space Mono',monospace;font-size:10px;color:#475569;line-height:1.8;margin-top:40px;}
 .note::before{content:'// NOTE  ';color:var(--cyan);}
 
-.proj-intro{
-  background:var(--terminal-bg);
-  border:1px solid rgba(0,212,255,0.12);
-  border-radius:8px;
-  padding:28px 36px;
-  margin-bottom:36px;
-  font-size:13.5px;
-  color:#64748b;
-  line-height:1.85;
-}
+/* PROJECTS */
+.proj-intro{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:8px;padding:28px 36px;margin-bottom:36px;font-size:13.5px;color:#64748b;line-height:1.85;}
 .proj-intro b{color:var(--cyan);}
 
 .cat-sec{margin-bottom:48px;}
-.cat-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:18px;
-  padding-bottom:12px;
-  border-bottom:1px solid var(--border);
-}
+.cat-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);}
 .cat-icon{font-size:16px;}
-.cat-title{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--ink);
-}
-.cat-count{
-  margin-left:auto;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  color:var(--muted);
-  background:var(--surface2);
-  border:1px solid var(--border);
-  padding:4px 12px;
-  border-radius:20px;
-  letter-spacing:1px;
-}
+.cat-title{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink);}
+.cat-count{margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 12px;border-radius:20px;letter-spacing:1px;}
 
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:10px;}
-.proj-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:18px;
-  transition:all 0.25s;
-  position:relative;
-  overflow:hidden;
-}
-.proj-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:1px;
-  background:linear-gradient(90deg,var(--cyan),var(--green));
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.3s;
-}
-.proj-card:hover{
-  border-color:rgba(0,212,255,0.3);
-  transform:translateY(-3px);
-  box-shadow:0 8px 28px rgba(0,212,255,0.08);
-}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px;transition:all 0.25s;position:relative;overflow:hidden;}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--green));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.proj-card:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,212,255,0.08);}
 .proj-card:hover::before{transform:scaleX(1);}
-.pnum{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  color:rgba(0,212,255,0.5);
-  margin-bottom:7px;
-  letter-spacing:1px;
-}
+.pnum{font-family:'Space Mono',monospace;font-size:9px;color:rgba(0,212,255,0.5);margin-bottom:7px;letter-spacing:1px;}
 .ptitle{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4;}
 .psub{font-size:11.5px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
 .ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
-.ptag{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  padding:3px 8px;
-  border-radius:2px;
-  font-weight:700;
-  letter-spacing:0.3px;
-}
+.ptag{font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;border-radius:2px;font-weight:700;}
 .tg{background:#d1fae5;color:#065f46;}
 .ta{background:#fef3c7;color:#92400e;}
 .tr{background:#fee2e2;color:#b91c1c;}
 .tb{background:#dbeafe;color:#1e40af;}
 .tp{background:#f3e8ff;color:#6b21a8;}
-
-.plink{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  color:var(--muted);
-  text-decoration:none;
-  letter-spacing:1px;
-  border:1px solid var(--border);
-  padding:6px 13px;
-  border-radius:3px;
-  transition:all 0.2s;
-  font-weight:700;
-  text-transform:uppercase;
-}
+.plink{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);text-decoration:none;letter-spacing:1px;border:1px solid var(--border);padding:6px 13px;border-radius:3px;transition:all 0.2s;font-weight:700;text-transform:uppercase;}
 .plink:hover{color:var(--cyan);border-color:var(--cyan);background:rgba(0,212,255,0.04);}
 .plink::after{content:'↗';margin-left:2px;}
 
-.capstone{
-  background:linear-gradient(135deg,var(--terminal-bg) 0%,#0d1420 100%);
-  border:1px solid rgba(0,212,255,0.25);
-  border-radius:10px;
-  padding:32px 36px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,212,255,0.08);
-}
-.capstone::before{
-  content:'CAPSTONE';
-  position:absolute;
-  top:20px;right:20px;
-  font-family:'Space Mono',monospace;
-  font-size:8px;
-  letter-spacing:3px;
-  color:var(--cyan);
-  border:1px solid rgba(0,212,255,0.25);
-  padding:5px 12px;
-  border-radius:3px;
-  font-weight:700;
-}
-.capstone::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at 80% 50%,rgba(0,212,255,0.04) 0%,transparent 60%);
-  pointer-events:none;
-}
+/* CAPSTONE */
+.capstone{background:linear-gradient(135deg,var(--tbg) 0%,#0d1420 100%);border:1px solid rgba(0,212,255,0.25);border-radius:10px;padding:32px 36px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,212,255,0.08);}
+.capstone::before{content:'CAPSTONE';position:absolute;top:20px;right:20px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--cyan);border:1px solid rgba(0,212,255,0.25);padding:5px 12px;border-radius:3px;font-weight:700;}
+.capstone::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(0,212,255,0.04) 0%,transparent 60%);pointer-events:none;}
 .capstone .pnum{color:rgba(0,212,255,0.4);font-size:10px;margin-bottom:10px;}
-.capstone .ptitle{
-  font-family:'Syne',sans-serif;
-  font-size:22px;
-  font-weight:800;
-  color:#f8fafc;
-  margin-bottom:10px;
-}
-.capstone .ptitle .hl{
-  background:linear-gradient(90deg,var(--cyan),var(--green));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
+.capstone .ptitle{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#f8fafc;margin-bottom:10px;}
+.capstone .ptitle .hl{background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .capstone .psub{color:#475569;font-size:13px;max-width:600px;line-height:1.8;margin-bottom:18px;}
 
-.cv-hero{
-  background:var(--terminal-bg);
-  border:1px solid rgba(0,212,255,0.12);
-  border-radius:10px;
-  padding:48px;
-  text-align:center;
-  margin-bottom:28px;
-  position:relative;
-  overflow:hidden;
-}
-.cv-hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,0.06),transparent 60%);
-  pointer-events:none;
-}
-.cv-hero h2{
-  font-family:'Syne',sans-serif;
-  font-size:24px;
-  font-weight:800;
-  color:#f8fafc;
-  margin-bottom:10px;
-  position:relative;
-}
+/* CV */
+.cv-hero{background:var(--tbg);border:1px solid rgba(0,212,255,0.12);border-radius:10px;padding:48px;text-align:center;margin-bottom:28px;position:relative;overflow:hidden;}
+.cv-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,0.06),transparent 60%);pointer-events:none;}
+.cv-hero h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#f8fafc;margin-bottom:10px;position:relative;}
 .cv-hero p{font-size:13.5px;color:#64748b;max-width:500px;margin:0 auto 32px;line-height:1.8;position:relative;}
 .cv-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:linear-gradient(90deg,var(--cyan),var(--cyan2));
-  color:#0a0e17;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding:16px 36px;
-  border-radius:4px;
-  text-decoration:none;
-  transition:all 0.2s;
-  box-shadow:0 0 20px rgba(0,212,255,0.3);
-}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,var(--cyan),var(--cyan2));color:#0a0e17;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border-radius:4px;text-decoration:none;transition:all 0.2s;box-shadow:0 0 20px rgba(0,212,255,0.3);}
 .btn-primary:hover{box-shadow:0 0 30px rgba(0,212,255,0.5);transform:translateY(-2px);}
-.btn-secondary{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:transparent;
-  color:var(--cyan);
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding:16px 36px;
-  border-radius:4px;
-  text-decoration:none;
-  border:1px solid rgba(0,212,255,0.3);
-  transition:all 0.2s;
-}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--cyan);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border-radius:4px;text-decoration:none;border:1px solid rgba(0,212,255,0.3);transition:all 0.2s;}
 .btn-secondary:hover{border-color:var(--cyan);background:rgba(0,212,255,0.05);}
 
-footer{
-  background:var(--terminal-bg);
-  border-top:1px solid rgba(0,212,255,0.08);
-  text-align:center;
-  padding:26px;
-  font-family:'Space Mono',monospace;
-  font-size:10px;
-  color:#334155;
-  position:relative;
-}
+footer{background:var(--tbg);border-top:1px solid rgba(0,212,255,0.08);text-align:center;padding:26px;font-family:'Space Mono',monospace;font-size:10px;color:#334155;}
 footer .fl{color:var(--cyan);}
 
+/* LANG */
 [data-lang]{display:none;}
 body.lang-en [data-lang="en"]{display:inherit;}
 body.lang-fr [data-lang="fr"]{display:inherit;}
@@ -909,12 +297,13 @@ body.lang-fr [data-lang="fr"]{display:inherit;}
 body.lang-en .en-i{display:inline;}
 body.lang-fr .fr-i{display:inline;}
 
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s,transform 0.5s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 @media(max-width:720px){
   .header-inner{grid-template-columns:1fr;gap:24px;}
-  .header-terminal{width:100%;}
+  .hterm{width:100%;}
   .stats-grid{grid-template-columns:repeat(3,1fr);}
   .exp-item{grid-template-columns:1fr;}
   .exp-left{text-align:left;padding:16px 0 4px;}
@@ -937,20 +326,18 @@ body.lang-fr .fr-i{display:inline;}
 
 <!-- HEADER -->
 <header>
-  <div class="header-noise"></div>
-  <div class="header-grid"></div>
-  <div class="orb1"></div>
-  <div class="orb2"></div>
+  <div class="hgrid"></div>
+  <div class="orb1"></div><div class="orb2"></div>
   <div class="header-inner">
     <div class="header-left">
       <div class="eyebrow">
-        <span class="en-i">IT SUPPORT | NETWORK ADMINISTRATION | CYBERSECURITY STUDENT · MONTRÉAL</span>
-        <span class="fr-i">SOUTIEN TI | ADMINISTRATION RÉSEAU | ÉTUDIANT EN CYBERSÉCURITÉ · MONTRÉAL</span>
+        <span class="en-i">IT SUPPORT TECHNICIAN · HELP DESK · NETWORK ADMIN · MONTRÉAL / OTTAWA</span>
+        <span class="fr-i">TECHNICIEN SOUTIEN TI · CENTRE D'AIDE · ADMIN RÉSEAU · MONTRÉAL / OTTAWA</span>
       </div>
       <h1 class="hname">Mohammad Salem<br><span class="hl">Hassani</span></h1>
       <p class="hsub">
-        <span class="en-i"><span>IT Support · Network Administration · Active Directory · Windows Server</span> · Saint-Lambert, QC</span>
-        <span class="fr-i"><span>Soutien TI · Administration Réseau · Active Directory · Windows Server</span> · Saint-Lambert, QC</span>
+        <span class="en-i">Active Directory · Windows Server · Help Desk · Network Support · Saint-Lambert, QC</span>
+        <span class="fr-i">Active Directory · Windows Server · Soutien TI · Réseau · Saint-Lambert, QC</span>
       </p>
       <div class="contact-row">
         <a href="mailto:salemhassani228@email.com"><span class="ci-icon">✉</span>salemhassani228@email.com</a>
@@ -959,31 +346,36 @@ body.lang-fr .fr-i{display:inline;}
         <a href="https://linkedin.com/in/salem786" target="_blank"><span class="ci-icon">in</span>linkedin.com/in/salem786</a>
       </div>
       <div class="badge-row">
+        <span class="hbadge amber"><span class="pulse a"></span>
+          <span class="en-i">OPEN TO WORK · MONTRÉAL &amp; OTTAWA</span>
+          <span class="fr-i">DISPONIBLE · MONTRÉAL &amp; OTTAWA</span>
+        </span>
         <span class="hbadge"><span class="pulse"></span>
           <span class="en-i">AEC CYBERSECURITY · DAWSON 2025</span>
           <span class="fr-i">AEC CYBERSÉCURITÉ · DAWSON 2025</span>
         </span>
-        <span class="hbadge green"><span class="pulse g"></span>TRYHACKME TOP 21%</span>
+        <span class="hbadge g"><span class="pulse g"></span>TRYHACKME TOP 21%</span>
         <span class="hbadge">
-          <span class="en-i">GOOGLE CERTIFIED · DEC 2025</span>
-          <span class="fr-i">CERTIFIÉ GOOGLE · DÉC 2025</span>
+          <span class="en-i">GOOGLE CERTIFIED</span>
+          <span class="fr-i">CERTIFIÉ GOOGLE</span>
         </span>
       </div>
     </div>
-    <div class="header-terminal">
-      <div class="terminal-bar">
-        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
-        <span class="terminal-title">terminal — bash</span>
+    <div class="hterm">
+      <div class="tbar">
+        <div class="td r"></div><div class="td y"></div><div class="td g"></div>
+        <span class="ttitle">terminal — bash</span>
       </div>
-      <div class="terminal-body">
-        <div class="t-line t-cmd">whoami</div>
-        <div class="t-out">aspiring_soc_analyst_and_it_support</div>
-        <div class="t-line t-cmd">cat status.txt</div>
-        <div class="t-out">AEC_in_progress: true</div>
-        <div class="t-out c">THM_rank: top_21%</div>
-        <div class="t-out">projects: 42</div>
-        <div class="t-out w">gov_it_exp: 2+ years</div>
-        <div class="t-line t-cmd">ping hire_me<span class="t-cursor"></span></div>
+      <div class="tbody">
+        <div class="tcmd">whoami</div>
+        <div class="tout">it_support_tech_seeking_work</div>
+        <div class="tcmd">cat target.txt</div>
+        <div class="tout c">help_desk: YES</div>
+        <div class="tout c">it_support: YES</div>
+        <div class="tout c">network_admin: YES</div>
+        <div class="tout w">location: MTL + OTT</div>
+        <div class="tout">gov_it_exp: 2+ years</div>
+        <div class="tcmd">ping hire_me<span class="tcursor"></span></div>
       </div>
     </div>
   </div>
@@ -992,100 +384,163 @@ body.lang-fr .fr-i{display:inline;}
 <!-- NAV -->
 <nav class="nav-tabs">
   <div class="nav-inner">
-    <button class="nav-tab active" data-num="01" onclick="showTab('profile',event)">
+    <button class="nav-tab active" onclick="showTab('profile',event)">
       <span class="en-i">Profile</span><span class="fr-i">Profil</span>
     </button>
-    <button class="nav-tab" data-num="02" onclick="showTab('itprojects',event)">
-      <span class="en-i">IT Support Projects</span><span class="fr-i">Projets Soutien TI</span>
+    <button class="nav-tab" onclick="showTab('itprojects',event)">
+      <span class="en-i">IT Support Labs</span><span class="fr-i">Labs Soutien TI</span>
     </button>
-    <button class="nav-tab" data-num="03" onclick="showTab('projects',event)">
+    <button class="nav-tab" onclick="showTab('projects',event)">
       <span class="en-i">42 Cyber Projects</span><span class="fr-i">42 Projets Cyber</span>
     </button>
-    <button class="nav-tab" data-num="04" onclick="showTab('cv',event)">
+    <button class="nav-tab" onclick="showTab('cv',event)">
       <span class="en-i">Download CV</span><span class="fr-i">Télécharger CV</span>
     </button>
   </div>
 </nav>
 
-<!-- ══ TAB: PROFILE ══ -->
+<!-- ══ PROFILE ══ -->
 <div id="tab-profile" class="page-section active">
 <div class="wrap">
 
   <!-- STATUS BAR -->
   <div class="status-bar reveal">
-    <div class="sb-item"><div class="sb-dot c"></div><span>STATUS:</span><span class="sb-val c">AVAILABLE FOR HIRE</span></div>
+    <div class="sb-item"><div class="sb-dot a"></div><span>OPEN TO WORK:</span><span class="sb-val a">MONTRÉAL &amp; OTTAWA</span></div>
     <div class="sb-sep">|</div>
-    <div class="sb-item"><div class="sb-dot"></div><span>PROJECTS:</span><span class="sb-val">42 CYBERSECURITY PROJECTS</span></div>
+    <div class="sb-item"><div class="sb-dot c"></div><span>AVAILABLE:</span><span class="sb-val c">IMMEDIATELY</span></div>
     <div class="sb-sep">|</div>
-    <div class="sb-item"><div class="sb-dot"></div><span>EXPERIENCE:</span><span class="sb-val">2+ YEARS GOVERNMENT IT</span></div>
+    <div class="sb-item"><div class="sb-dot"></div><span>WORK MODE:</span><span class="sb-val">ON-SITE · HYBRID · REMOTE</span></div>
     <div class="sb-sep">|</div>
-    <div class="sb-item"><div class="sb-dot a"></div><span>CERT:</span><span class="sb-val a">SEC+ IN PROGRESS</span></div>
+    <div class="sb-item"><div class="sb-dot"></div><span>EXP:</span><span class="sb-val">2+ YRS GOV IT</span></div>
     <div class="sb-sep">|</div>
     <div class="sb-item"><div class="sb-dot c"></div><span>THM:</span><span class="sb-val c">TOP 21%</span></div>
-    <div class="sb-sep">|</div>
-    <div class="sb-item"><div class="sb-dot"></div><span>LOCATION:</span><span class="sb-val">MONTRÉAL, QC</span></div>
+  </div>
+
+  <!-- HIRE BANNER -->
+  <div class="hire-banner reveal">
+    <div class="hb-icon">🎯</div>
+    <div class="hb-text">
+      <strong><span class="en-i">Currently seeking first IT role in Canada</span><span class="fr-i">À la recherche de mon premier poste TI au Canada</span></strong><br>
+      <span class="en-i">2+ years of government IT experience · 42 cybersecurity lab projects · Active Directory, Windows Server, Help Desk, LAN/WAN · Available in Montréal and Ottawa.</span>
+      <span class="fr-i">2+ ans d'expérience TI gouvernementale · 42 projets de laboratoire en cybersécurité · Active Directory, Windows Server, Centre d'aide, LAN/WAN · Disponible à Montréal et Ottawa.</span>
+    </div>
+    <div>
+      <div class="hb-badge" style="margin-bottom:6px;"><span class="pulse a"></span>
+        <span class="en-i">AVAILABLE NOW</span><span class="fr-i">DISPONIBLE MAINTENANT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARGET ROLES -->
+  <div class="sec-head"><span class="en-i">Target Roles</span><span class="fr-i">Postes Visés</span></div>
+  <div class="roles-grid reveal">
+    <div class="role-card"><div class="role-icon">🖥️</div><div class="role-title"><span class="en-i">IT Support Technician</span><span class="fr-i">Technicien Soutien TI</span></div><div class="role-sub"><span class="en-i">Tier 1 &amp; Tier 2</span><span class="fr-i">Niveau 1 &amp; Niveau 2</span></div></div>
+    <div class="role-card"><div class="role-icon">🎧</div><div class="role-title"><span class="en-i">Help Desk Analyst</span><span class="fr-i">Analyste Centre d'Aide</span></div><div class="role-sub"><span class="en-i">Service Desk · Helpdesk</span><span class="fr-i">Centre de Service · Assistance</span></div></div>
+    <div class="role-card"><div class="role-icon">🖨️</div><div class="role-title"><span class="en-i">Desktop Support Technician</span><span class="fr-i">Technicien Soutien Bureautique</span></div><div class="role-sub"><span class="en-i">End-User Support</span><span class="fr-i">Soutien aux Utilisateurs</span></div></div>
+    <div class="role-card"><div class="role-icon">🌐</div><div class="role-title"><span class="en-i">Network Support Technician</span><span class="fr-i">Technicien Réseau</span></div><div class="role-sub"><span class="en-i">LAN/WAN · Network Admin</span><span class="fr-i">LAN/WAN · Admin Réseau</span></div></div>
+    <div class="role-card"><div class="role-icon">🗂️</div><div class="role-title"><span class="en-i">Jr. Network Administrator</span><span class="fr-i">Admin Réseau Junior</span></div><div class="role-sub"><span class="en-i">Active Directory · Windows Server</span><span class="fr-i">Active Directory · Windows Server</span></div></div>
+    <div class="role-card"><div class="role-icon">🔐</div><div class="role-title"><span class="en-i">Junior SOC Analyst</span><span class="fr-i">Analyste SOC Junior</span></div><div class="role-sub"><span class="en-i">Security Operations · Monitoring</span><span class="fr-i">Opérations Sécurité · Surveillance</span></div></div>
   </div>
 
   <!-- STATS -->
   <div class="stats-grid reveal">
     <div class="stat"><div class="stat-num">2<span class="acc">+</span></div><div class="stat-label"><span class="en-i">Yrs Gov. IT</span><span class="fr-i">Ans TI Gov.</span></div></div>
-    <div class="stat"><div class="stat-num">42</div><div class="stat-label"><span class="en-i">Lab Projects</span><span class="fr-i">Projets Lab</span></div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label"><span class="en-i">THM Badges</span><span class="fr-i">Badges THM</span></div></div>
+    <div class="stat"><div class="stat-num">42</div><div class="stat-label"><span class="en-i">Cyber Labs</span><span class="fr-i">Labs Cyber</span></div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label"><span class="en-i">IT Labs</span><span class="fr-i">Labs TI</span></div></div>
     <div class="stat"><div class="stat-num">21<span class="acc">%</span></div><div class="stat-label"><span class="en-i">THM Rank</span><span class="fr-i">Rang THM</span></div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label"><span class="en-i">Languages</span><span class="fr-i">Langues</span></div></div>
-    <div class="stat"><div class="stat-num">6</div><div class="stat-label"><span class="en-i">Sec. Domains</span><span class="fr-i">Domaines Séc.</span></div></div>
-  </div>
-
-  <!-- IT SUPPORT & INFRASTRUCTURE EXPERIENCE -->
-  <div class="sec-head"><span class="en-i">IT Support &amp; Infrastructure Experience</span><span class="fr-i">Expérience Soutien TI &amp; Infrastructure</span></div>
-  <div class="list-items reveal">
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i">2+ years supporting users and critical systems in a government environment.</span><span class="fr-i">2+ ans de soutien aux utilisateurs et aux systèmes critiques en environnement gouvernemental.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i">Experience with Windows workstations, user account management, and access control.</span><span class="fr-i">Expérience avec les postes de travail Windows, la gestion des comptes utilisateurs et le contrôle d'accès.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i">Familiar with LAN/WAN infrastructure, network troubleshooting, and system administration.</span><span class="fr-i">Familiarité avec l'infrastructure LAN/WAN, le dépannage réseau et l'administration de systèmes.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i">Hands-on experience with Active Directory, Windows Server, VLANs, and firewall configuration through academic labs.</span><span class="fr-i">Expérience pratique avec Active Directory, Windows Server, les VLAN et la configuration de pare-feu via des laboratoires académiques.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i">Currently expanding cybersecurity and networking skills through Dawson College AEC projects.</span><span class="fr-i">Développement continu des compétences en cybersécurité et réseautage via les projets AEC du Collège Dawson.</span></div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label"><span class="en-i">Cities</span><span class="fr-i">Villes</span></div></div>
   </div>
 
   <!-- ABOUT -->
-  <div class="sec-head"><span class="en-i">Why This Candidate</span><span class="fr-i">Pourquoi Ce Candidat</span></div>
+  <div class="sec-head"><span class="en-i">About Me</span><span class="fr-i">À Propos</span></div>
   <div class="about-panel reveal">
-    <div class="ap-quote">/* it support background, growing into security */</div>
+    <div class="ap-quote">/* it support background, building toward security */</div>
     <h2>
-      <span class="en-i">Government IT Support — <span class="hl">Now Adding Network &amp; Security Depth</span></span>
-      <span class="fr-i">Soutien TI Gouvernemental — <span class="hl">Approfondissement Réseau &amp; Sécurité</span></span>
+      <span class="en-i">Government IT Professional — <span class="hl">Ready for First Canadian Role</span></span>
+      <span class="fr-i">Professionnel TI Gouvernemental — <span class="hl">Prêt pour Mon Premier Poste au Canada</span></span>
     </h2>
     <p>
-      <span class="en-i">I bring over two years of government IT experience supporting users, administering Windows systems, and maintaining LAN/WAN infrastructure in operational, high-stakes environments. That included first- and second-level troubleshooting, user provisioning and access control, and hands-on work with biometric data collection equipment under strict confidentiality standards.</span>
-      <span class="fr-i">J'apporte plus de deux ans d'expérience en TI gouvernementale : soutien aux utilisateurs, administration de systèmes Windows et maintenance de l'infrastructure LAN/WAN dans des environnements opérationnels à enjeux élevés. Cela incluait le dépannage de premier et deuxième niveau, le provisionnement des utilisateurs, le contrôle d'accès, et la manipulation d'équipements de collecte de données biométriques selon des normes de confidentialité strictes.</span>
+      <span class="en-i">I have over two years of IT support and operations experience in a government environment — supporting users, administering Windows systems, managing LAN/WAN infrastructure, and handling biometric data collection equipment under strict confidentiality standards. This was hands-on, operational IT work in a demanding, high-stakes setting.</span>
+      <span class="fr-i">J'ai plus de deux ans d'expérience en soutien TI et opérations en environnement gouvernemental — soutien aux utilisateurs, administration de systèmes Windows, gestion de l'infrastructure LAN/WAN et manipulation d'équipements de collecte de données biométriques selon des normes strictes. C'était un travail TI opérationnel, concret, dans un environnement exigeant à enjeux élevés.</span>
     </p>
     <p>
-      <span class="en-i">I'm currently completing an AEC in Cybersecurity at Dawson College, building hands-on experience through 42 lab projects covering networking, Windows administration, vulnerability management, incident response, and cyber defence. My goal is to contribute in IT Support, Network Administration, or Junior Cybersecurity roles while continuing to develop more advanced security skills.</span>
-      <span class="fr-i">Je termine actuellement un AEC en Cybersécurité au Collège Dawson, avec 42 projets pratiques couvrant le réseautage, l'administration Windows, la gestion des vulnérabilités, la réponse aux incidents et la défense cyber. Mon objectif est de contribuer dans des rôles de Soutien TI, d'Administration Réseau ou de Cybersécurité Junior, tout en continuant à développer des compétences de sécurité plus avancées.</span>
+      <span class="en-i">I'm currently completing an AEC in Cybersecurity at Dawson College (Montréal), with 42 lab projects covering Active Directory, Windows Server, vulnerability management, incident response, and cyber defence. My immediate goal is to join a Canadian IT team — bringing real operational experience plus active learning — in Montréal or Ottawa.</span>
+      <span class="fr-i">Je termine actuellement un AEC en Cybersécurité au Collège Dawson (Montréal), avec 42 projets de laboratoire couvrant Active Directory, Windows Server, la gestion des vulnérabilités, la réponse aux incidents et la défense cyber. Mon objectif immédiat est de rejoindre une équipe TI canadienne — en apportant une expérience opérationnelle réelle et un apprentissage actif — à Montréal ou Ottawa.</span>
     </p>
   </div>
 
+  <!-- VALUE CARDS -->
   <div class="vcards reveal">
-    <div class="vcard"><div class="vc-icon">🖥️</div><h3><span class="en-i">IT Support &amp; Troubleshooting</span><span class="fr-i">Soutien TI &amp; Dépannage</span></h3><p><span class="en-i">2+ years of first- and second-level support, hardware/software/network incident resolution under operational deadlines.</span><span class="fr-i">2+ ans de soutien de premier et deuxième niveau, résolution d'incidents matériels, logiciels et réseau sous délais opérationnels.</span></p></div>
-    <div class="vcard"><div class="vc-icon">🌐</div><h3><span class="en-i">Network &amp; Windows Administration</span><span class="fr-i">Administration Réseau &amp; Windows</span></h3><p><span class="en-i">LAN/WAN infrastructure, Windows Server, user provisioning, and access control aligned with least-privilege principles.</span><span class="fr-i">Infrastructure LAN/WAN, Windows Server, provisionnement des utilisateurs et contrôle d'accès selon le moindre privilège.</span></p></div>
-    <div class="vcard"><div class="vc-icon">📡</div><h3><span class="en-i">Active Skill Builder</span><span class="fr-i">Développement Actif</span></h3><p><span class="en-i">Google Certified, TryHackMe Top 21%, CompTIA Security+ in progress, Azure AZ-900 planned.</span><span class="fr-i">Certifié Google, TryHackMe Top 21%, CompTIA Security+ en cours, Azure AZ-900 planifié.</span></p></div>
-    <div class="vcard"><div class="vc-icon">🗣️</div><h3><span class="en-i">Trilingual Professional</span><span class="fr-i">Professionnel Trilingue</span></h3><p><span class="en-i">English fluency · French actively improving (A2) · Dari native — strong asset in Montréal.</span><span class="fr-i">Anglais courant · Français en progression (A2) · Dari natif — atout majeur à Montréal.</span></p></div>
+    <div class="vcard"><div class="vc-icon">🏛️</div><h3><span class="en-i">Government IT Experience</span><span class="fr-i">Expérience TI Gouvernementale</span></h3><p><span class="en-i">2+ years supporting users and systems in a high-stakes operational environment — real IT work, not just labs.</span><span class="fr-i">2+ ans de soutien aux utilisateurs et systèmes dans un environnement opérationnel à enjeux élevés — travail TI réel, pas seulement des labs.</span></p></div>
+    <div class="vcard"><div class="vc-icon">🗂️</div><h3><span class="en-i">Windows &amp; AD Administration</span><span class="fr-i">Administration Windows &amp; AD</span></h3><p><span class="en-i">Hands-on with Active Directory, Windows Server, Group Policy, DNS, DHCP, and user access management through academic labs.</span><span class="fr-i">Pratique avec Active Directory, Windows Server, Stratégie de Groupe, DNS, DHCP et gestion des accès utilisateurs via des laboratoires académiques.</span></p></div>
+    <div class="vcard"><div class="vc-icon">📡</div><h3><span class="en-i">Growing Security Skills</span><span class="fr-i">Compétences Sécurité en Croissance</span></h3><p><span class="en-i">Google Certified, TryHackMe Top 21%, CompTIA Security+ in progress — actively adding cybersecurity depth to an IT foundation.</span><span class="fr-i">Certifié Google, TryHackMe Top 21%, CompTIA Security+ en cours — ajout actif de profondeur en cybersécurité à une base TI solide.</span></p></div>
+    <div class="vcard"><div class="vc-icon">🗣️</div><h3><span class="en-i">Trilingual · Montréal Ready</span><span class="fr-i">Trilingue · Prêt pour Montréal</span></h3><p><span class="en-i">English (fluent) · French A2 improving actively · Dari native — well-suited for bilingual IT environments.</span><span class="fr-i">Anglais courant · Français A2 en progression · Dari natif — bien adapté aux environnements TI bilingues.</span></p></div>
+  </div>
+
+  <!-- IT SKILLS -->
+  <div class="sec-head"><span class="en-i">IT &amp; Infrastructure Skills</span><span class="fr-i">Compétences TI &amp; Infrastructure</span></div>
+
+  <div class="skills-subhead"><span class="en-i">Core IT Support</span><span class="fr-i">Soutien TI Principal</span></div>
+  <div class="skills-wrap reveal">
+    <span class="stag primary">Windows 10/11</span>
+    <span class="stag primary">Active Directory</span>
+    <span class="stag primary">Windows Server</span>
+    <span class="stag primary">Group Policy (GPO)</span>
+    <span class="stag primary">Help Desk / Tier 1 &amp; 2</span>
+    <span class="stag primary">Technical Support</span>
+    <span class="stag primary">User Provisioning</span>
+    <span class="stag primary">Access Control</span>
+    <span class="stag primary">Hardware Troubleshooting</span>
+    <span class="stag primary">Microsoft 365</span>
+    <span class="stag primary">Ticketing Systems</span>
+    <span class="stag primary">Remote Desktop</span>
+  </div>
+
+  <div class="skills-subhead"><span class="en-i">Networking</span><span class="fr-i">Réseautage</span></div>
+  <div class="skills-wrap reveal">
+    <span class="stag primary">LAN/WAN</span>
+    <span class="stag primary">TCP/IP</span>
+    <span class="stag primary">DNS</span>
+    <span class="stag primary">DHCP</span>
+    <span class="stag primary">VLANs</span>
+    <span class="stag primary">Network Troubleshooting</span>
+    <span class="stag primary">Wireshark</span>
+    <span class="stag primary">Firewall / Iptables</span>
+  </div>
+
+  <div class="skills-subhead"><span class="en-i">Cybersecurity (Academic)</span><span class="fr-i">Cybersécurité (Académique)</span></div>
+  <div class="skills-wrap reveal">
+    <span class="stag">Vulnerability Assessment</span>
+    <span class="stag">Incident Response</span>
+    <span class="stag">SIEM · Wazuh / XDR</span>
+    <span class="stag">OpenVAS / GVM</span>
+    <span class="stag">OWASP ZAP</span>
+    <span class="stag">MITRE ATT&amp;CK</span>
+    <span class="stag">Linux Hardening</span>
+    <span class="stag">Docker</span>
+    <span class="stag">OSINT</span>
+    <span class="stag">GRC &amp; Compliance</span>
+    <span class="stag">NIST / ISO 27001</span>
+    <span class="stag">Digital Forensics</span>
   </div>
 
   <!-- EXPERIENCE -->
-  <div class="sec-head"><span class="en-i">Professional Experience</span><span class="fr-i">Expérience Professionnelle</span></div>
+  <div class="sec-head"><span class="en-i">Work Experience</span><span class="fr-i">Expérience Professionnelle</span></div>
   <div class="timeline">
     <div class="exp-item reveal">
       <div class="exp-left">
         <div class="exp-dates">2020 – 2022</div>
-        <div class="exp-org"><span class="en-i">NSIA<br>Kabul, Afghanistan</span><span class="fr-i">NSIA<br>Kaboul, Afghanistan</span></div>
+        <div class="exp-org"><span class="en-i">National Statistics &amp; Information Authority (NSIA)<br>Kabul, Afghanistan</span><span class="fr-i">Autorité Nationale des Statistiques et de l'Information (NSIA)<br>Kaboul, Afghanistan</span></div>
       </div>
       <div class="exp-right">
         <div class="exp-role"><span class="en-i">IT Support Technician</span><span class="fr-i">Technicien en Soutien TI</span></div>
         <ul class="exp-bullets">
-          <li><span class="bul">◆</span><span><span class="en-i">Provided first and second-level IT support across government departments — resolving hardware, software, and network incidents under strict operational deadlines.</span><span class="fr-i">Fourni un soutien TI de premier et deuxième niveau à travers les départements gouvernementaux — résolution d'incidents sous délais opérationnels stricts.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Managed and maintained <strong>LAN/WAN infrastructure</strong> ensuring high availability for mission-critical government systems.</span><span class="fr-i">Gestion et maintenance de l'<strong>infrastructure LAN/WAN</strong> assurant la haute disponibilité des systèmes gouvernementaux critiques.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Administered <strong>Windows workstations and servers</strong>: user provisioning, access control, and privilege management aligned with least-privilege principles.</span><span class="fr-i">Administration des <strong>postes de travail et serveurs Windows</strong> : provisionnement, contrôle d'accès et gestion des privilèges selon le principe du moindre privilège.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Built and maintained an <strong>internal knowledge base</strong> documenting recurring issues, reducing repeat incident rates.</span><span class="fr-i">Création d'une <strong>base de connaissances interne</strong> documentant les incidents récurrents, réduisant le taux de répétition.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Provided first and second-level IT support across government departments — resolving hardware, software, and network incidents under operational deadlines.</span><span class="fr-i">Fourni un soutien TI de premier et deuxième niveau à travers les départements gouvernementaux — résolution d'incidents matériels, logiciels et réseau sous délais opérationnels.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Managed and maintained <strong>LAN/WAN infrastructure</strong>, ensuring network availability for government operations.</span><span class="fr-i">Gestion et maintenance de l'<strong>infrastructure LAN/WAN</strong>, assurant la disponibilité réseau pour les opérations gouvernementales.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Administered <strong>Windows workstations and servers</strong>: user accounts, access control, and privilege management aligned with least-privilege principles.</span><span class="fr-i">Administration des <strong>postes de travail et serveurs Windows</strong> : comptes utilisateurs, contrôle d'accès et gestion des privilèges selon le principe du moindre privilège.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Built and maintained an <strong>internal knowledge base</strong> documenting recurring issues and solutions for future reference.</span><span class="fr-i">Création et maintenance d'une <strong>base de connaissances interne</strong> documentant les incidents récurrents et leurs solutions.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Coordinated vendor escalations and tracked complex tickets from open to resolution.</span><span class="fr-i">Coordination des escalades fournisseurs et suivi des tickets complexes de l'ouverture à la résolution.</span></span></li>
         </ul>
       </div>
     </div>
@@ -1097,22 +552,12 @@ body.lang-fr .fr-i{display:inline;}
       <div class="exp-right">
         <div class="exp-role"><span class="en-i">Identity Card Officer — IT Division</span><span class="fr-i">Agent Carte d'Identité — Division TI</span></div>
         <ul class="exp-bullets">
-          <li><span class="bul">◆</span><span><span class="en-i">Operated and maintained <strong>biometric data collection systems</strong> for national ID issuance — handling sensitive citizen data with strict confidentiality standards.</span><span class="fr-i">Exploitation et maintenance des <strong>systèmes de collecte de données biométriques</strong> pour l'émission de cartes nationales d'identité.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Ensured <strong>data integrity and secure processing</strong> of personal records in compliance with government security protocols.</span><span class="fr-i">Assurance de l'<strong>intégrité des données et du traitement sécurisé</strong> des dossiers personnels conformément aux protocoles gouvernementaux.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Trained new staff on hardware operation and security procedures.</span><span class="fr-i">Formation du nouveau personnel sur le fonctionnement du matériel et les procédures de sécurité.</span></span></li>
-          <li><span class="bul">◆</span><span><span class="en-i">Liaison between technical teams and end users, translating complex security requirements into actionable guidance.</span><span class="fr-i">Interface entre les équipes techniques et les utilisateurs finaux, traduisant les exigences de sécurité en instructions actionnables.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Operated and maintained <strong>biometric data collection equipment</strong> for national ID issuance, handling citizen data under strict confidentiality standards.</span><span class="fr-i">Exploitation et maintenance des <strong>équipements de collecte de données biométriques</strong> pour l'émission de cartes d'identité nationales, selon des normes strictes de confidentialité.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Ensured <strong>data accuracy and secure processing</strong> of personal records in compliance with government data procedures.</span><span class="fr-i">Assurance de l'<strong>exactitude des données et du traitement sécurisé</strong> des dossiers personnels selon les procédures gouvernementales.</span></span></li>
+          <li><span class="bul">◆</span><span><span class="en-i">Trained new staff on hardware operation and standard procedures.</span><span class="fr-i">Formation du nouveau personnel sur le fonctionnement du matériel et les procédures standard.</span></span></li>
         </ul>
       </div>
     </div>
-  </div>
-
-  <!-- TRAINING -->
-  <div class="sec-head"><span class="en-i">Academic Training — Dawson College 2025+</span><span class="fr-i">Formation Académique — Collège Dawson 2025+</span></div>
-  <div class="list-items reveal">
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i"><strong>AEC in Cybersecurity — Dawson College, Montréal (2025–Present).</strong> 42 documented lab reports across 6 security domains: Threats &amp; Risks, Vulnerability Management, Intrusion Testing, Incident Handling, Compliance, and Cyber Defence.</span><span class="fr-i"><strong>AEC en Cybersécurité — Collège Dawson, Montréal (2025–Présent).</strong> 42 rapports de laboratoire documentés sur 6 domaines : Menaces &amp; Risques, Gestion des Vulnérabilités, Tests d'Intrusion, Gestion des Incidents, Conformité et Défense Cyber.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i"><strong>Capstone: Project NordForge.</strong> End-to-end corporate cybersecurity program — governance, GRC, incident response, technical controls, and security architecture implemented from scratch.</span><span class="fr-i"><strong>Capstone : Projet NordForge.</strong> Programme de cybersécurité d'entreprise de bout en bout — gouvernance, GRC, réponse aux incidents, contrôles techniques et architecture de sécurité implémentés de zéro.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i"><strong>NorthStream Compliance Series (12 reports).</strong> Legal Requirements Register, International Compliance Matrix, Framework Selection, CIS Benchmark, and scripted verification.</span><span class="fr-i"><strong>Série Conformité NorthStream (12 rapports).</strong> Registre d'exigences légales, Matrice de conformité internationale, Sélection de cadres, Référentiel CIS et vérification scriptée.</span></div></div>
-    <div class="li-item"><span class="d">◆</span><div><span class="en-i"><strong>Intrusion Testing Track.</strong> Passive/active reconnaissance, OSINT &amp; DNS enumeration, social engineering simulation, exploitation to persistence, DVWA &amp; OWASP Juice Shop.</span><span class="fr-i"><strong>Parcours Tests d'Intrusion.</strong> Reconnaissance passive/active, OSINT &amp; énumération DNS, simulation d'ingénierie sociale, exploitation jusqu'à la persistance, DVWA &amp; OWASP Juice Shop.</span></div></div>
   </div>
 
   <!-- CERTS -->
@@ -1122,33 +567,6 @@ body.lang-fr .fr-i{display:inline;}
     <div class="cert-card"><div class="icon">🛡️</div><h4>CompTIA Security+</h4><p><span class="en-i">Expected 2026</span><span class="fr-i">Prévu 2026</span></p><span class="badge bprog">⏳ <span class="en-i">In Progress</span><span class="fr-i">En cours</span></span></div>
     <div class="cert-card"><div class="icon">☁️</div><h4>Microsoft Azure AZ-900</h4><p><span class="en-i">Planned 2026</span><span class="fr-i">Planifié 2026</span></p><span class="badge bplan">📅 <span class="en-i">Planned</span><span class="fr-i">Planifié</span></span></div>
     <div class="cert-card"><div class="icon">🎯</div><h4>TryHackMe</h4><p>Top 21% Globally · 7 Badges</p><span class="badge bdone">✅ Active</span></div>
-  </div>
-
-  <!-- SKILLS -->
-  <div class="sec-head"><span class="en-i">Core Expertise</span><span class="fr-i">Compétences Clés</span></div>
-
-  <div class="skills-subhead"><span class="en-i">Infrastructure &amp; IT Support</span><span class="fr-i">Infrastructure &amp; Soutien TI</span></div>
-  <div class="skills-wrap reveal">
-    <span class="stag primary">Active Directory</span><span class="stag primary">Windows Server</span>
-    <span class="stag primary">Microsoft Windows</span><span class="stag primary">Technical Support</span>
-    <span class="stag primary">Help Desk</span><span class="stag primary">LAN/WAN</span>
-    <span class="stag primary">TCP/IP</span><span class="stag primary">DNS</span>
-    <span class="stag primary">DHCP</span><span class="stag primary">Network Troubleshooting</span>
-    <span class="stag primary">Microsoft 365</span><span class="stag primary">IAM / Access Control</span>
-  </div>
-
-  <div class="skills-subhead"><span class="en-i">Cybersecurity</span><span class="fr-i">Cybersécurité</span></div>
-  <div class="skills-wrap reveal">
-    <span class="stag">Vulnerability Assessment</span><span class="stag">Incident Response</span>
-    <span class="stag">Security Monitoring</span><span class="stag">SIEM</span>
-    <span class="stag">Wazuh / XDR</span><span class="stag">OpenVAS / GVM</span>
-    <span class="stag">OWASP ZAP</span><span class="stag">Wireshark</span>
-    <span class="stag">Metasploit</span><span class="stag">MITRE ATT&amp;CK</span>
-    <span class="stag">CVSS v3.x</span><span class="stag">Firewall / Iptables</span>
-    <span class="stag">Linux Hardening</span><span class="stag">Docker</span>
-    <span class="stag">OSINT</span><span class="stag">Digital Forensics</span>
-    <span class="stag">GRC &amp; Compliance</span><span class="stag">NIST / ISO 27001</span>
-    <span class="stag">Cloud Security (Azure)</span><span class="stag">Technical Documentation</span>
   </div>
 
   <!-- LANGUAGES -->
@@ -1176,225 +594,243 @@ body.lang-fr .fr-i{display:inline;}
     </div>
   </div>
 
-  <!-- OPEN TO WORK / CURRENTLY SEEKING -->
-  <div class="sec-head"><span class="en-i">Currently Seeking</span><span class="fr-i">Actuellement à la Recherche</span></div>
-  <div class="about-panel reveal" style="padding:28px 32px;">
-    <div class="list-items" style="margin-bottom:16px;">
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">IT Support Technician</span><span class="fr-i">Technicien en Soutien TI</span></div></div>
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">Help Desk Analyst</span><span class="fr-i">Analyste Centre d'Assistance</span></div></div>
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">Service Desk Analyst</span><span class="fr-i">Analyste Centre de Service</span></div></div>
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">Network Support Technician</span><span class="fr-i">Technicien de Soutien Réseau</span></div></div>
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">Junior Network Administrator</span><span class="fr-i">Administrateur Réseau Junior</span></div></div>
-      <div class="li-item" style="background:rgba(255,255,255,0.02);border-color:rgba(0,212,255,0.15);color:#94a3b8;"><span class="d">◆</span><div><span class="en-i">Junior SOC Analyst</span><span class="fr-i">Analyste SOC Junior</span></div></div>
-    </div>
-    <p style="margin-bottom:0;">
-      <span class="en-i">Available for On-Site, Hybrid, and Remote opportunities in the Greater Montréal Area.</span>
-      <span class="fr-i">Disponible pour des opportunités sur site, hybrides ou à distance dans le Grand Montréal.</span>
-    </p>
-  </div>
-
   <div class="note reveal">
-    <span class="en-i">All 42 cybersecurity lab reports are documented and available for review via Google Drive links in the "42 Cyber Projects" tab. IT Support &amp; Network labs are listed under "IT Support Projects." Government employment records from NSIA (2019–2022) available upon request.</span>
-    <span class="fr-i">Les 42 rapports de laboratoire en cybersécurité sont disponibles via les liens Google Drive dans l'onglet « 42 Projets Cyber ». Les labs de Soutien TI &amp; Réseau sont listés sous « Projets Soutien TI ». Les dossiers d'emploi gouvernemental NSIA (2019–2022) sont disponibles sur demande.</span>
+    <span class="en-i">IT Support &amp; Windows Server labs are in the "IT Support Labs" tab. All 42 cybersecurity reports are in "42 Cyber Projects." Government employment records from NSIA (2019–2022) available upon request.</span>
+    <span class="fr-i">Les labs de Soutien TI &amp; Windows Server sont dans l'onglet « Labs Soutien TI ». Les 42 rapports cybersécurité sont dans « 42 Projets Cyber ». Les dossiers d'emploi gouvernemental NSIA (2019–2022) disponibles sur demande.</span>
   </div>
 
 </div>
 </div>
 
-<!-- ══ TAB: IT SUPPORT PROJECTS (NEW) ══ -->
+<!-- ══ IT SUPPORT LABS ══ -->
 <div id="tab-itprojects" class="page-section">
 <div class="wrap">
 
   <div class="proj-intro reveal">
-    <span class="en-i"><b>IT Support &amp; Windows Server Administration labs</b> completed alongside the AEC in Cybersecurity. These reflect the helpdesk-adjacent infrastructure skills used daily in IT Support, Network Technician, and Desktop Support roles — Active Directory, Windows Server, Group Policy, and DNS/DHCP. All labs were performed in a virtual environment.</span>
-    <span class="fr-i"><b>Laboratoires de Soutien TI &amp; Administration Windows Server</b> complétés en parallèle de l'AEC en Cybersécurité. Ils reflètent les compétences d'infrastructure utilisées quotidiennement dans les rôles de Soutien TI, Technicien Réseau et Soutien Bureautique — Active Directory, Windows Server, Stratégie de Groupe et DNS/DHCP. Tous les laboratoires ont été réalisés dans un environnement virtuel.</span>
+    <span class="en-i"><b>IT Support &amp; Windows Administration lab projects</b> — completed as part of the AEC in Cybersecurity at Dawson College and through the JobSkillShare IT Support course. Each lab simulates a real workplace scenario. All work was performed in a virtual environment.</span>
+    <span class="fr-i"><b>Projets de laboratoire Soutien TI &amp; Administration Windows</b> — complétés dans le cadre de l'AEC en Cybersécurité au Collège Dawson et du cours IT Support de JobSkillShare. Chaque laboratoire simule un scénario de milieu de travail réel. Tous les travaux ont été réalisés dans un environnement virtuel.</span>
   </div>
 
-  <!-- ACTIVE DIRECTORY -->
+  <!-- PROJECT 1: WINDOWS WORKSTATION -->
   <div class="cat-sec reveal">
     <div class="cat-head">
-      <span class="cat-icon">🗂️</span>
-      <span class="cat-title"><span class="en-i">Active Directory &amp; Windows Server</span><span class="fr-i">Active Directory &amp; Windows Server</span></span>
-      <span class="cat-count">3 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
+      <span class="cat-icon">🖥️</span>
+      <span class="cat-title"><span class="en-i">Project 1 — Windows Enterprise Workstation Setup</span><span class="fr-i">Projet 1 — Configuration Poste Windows d'Entreprise</span></span>
+      <span class="cat-count">IN PROGRESS</span>
     </div>
     <div class="proj-grid">
       <div class="proj-card">
-        <div class="pnum"># A1</div>
-        <div class="ptitle"><span class="en-i">Active Directory Enterprise Lab</span><span class="fr-i">Laboratoire Active Directory d'Entreprise</span></div>
-        <div class="psub"><span class="en-i">Deployed a Windows Server domain environment, created Organizational Units and Group Policies, and managed user provisioning and access control.</span><span class="fr-i">Déploiement d'un domaine Windows Server, création d'Unités Organisationnelles et de Stratégies de Groupe, gestion du provisionnement des utilisateurs.</span></div>
-        <div class="ptags"><span class="ptag tb">Active Directory</span><span class="ptag tg">Windows Server</span><span class="ptag ta">Group Policy</span></div>
+        <div class="pnum">LAB · A1</div>
+        <div class="ptitle"><span class="en-i">Enterprise Windows 11 Workstation Deployment</span><span class="fr-i">Déploiement Poste Windows 11 d'Entreprise</span></div>
+        <div class="psub"><span class="en-i">Clean install of Windows 11, local user creation, Remote Desktop configuration, Disk Management, BitLocker setup, Event Viewer review, and troubleshooting simulation.</span><span class="fr-i">Installation propre de Windows 11, création d'utilisateur local, configuration Remote Desktop, gestion des disques, BitLocker, revue Event Viewer et simulation de dépannage.</span></div>
+        <div class="ptags"><span class="ptag tb">Windows 11</span><span class="ptag tg">BitLocker</span><span class="ptag ta">Event Viewer</span><span class="ptag tb">Remote Desktop</span></div>
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2: ACTIVE DIRECTORY -->
+  <div class="cat-sec reveal">
+    <div class="cat-head">
+      <span class="cat-icon">🗂️</span>
+      <span class="cat-title"><span class="en-i">Project 2 — Active Directory &amp; Windows Server Administration</span><span class="fr-i">Projet 2 — Administration Active Directory &amp; Windows Server</span></span>
+      <span class="cat-count">IN PROGRESS</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="pnum">LAB · A2</div>
+        <div class="ptitle"><span class="en-i">Enterprise Active Directory Lab — 50-User Company</span><span class="fr-i">Lab Active Directory d'Entreprise — Entreprise de 50 Utilisateurs</span></div>
+        <div class="psub"><span class="en-i">Full domain deployment: Windows Server, Domain Controller, Organizational Units (HR, Finance, IT), users, security groups, password policy, desktop policy via GPO, and file share configuration.</span><span class="fr-i">Déploiement de domaine complet : Windows Server, Contrôleur de Domaine, Unités Organisationnelles (RH, Finance, TI), utilisateurs, groupes, politique de mots de passe, politique bureau via GPO et configuration de partages de fichiers.</span></div>
+        <div class="ptags"><span class="ptag tb">Active Directory</span><span class="ptag tg">Windows Server</span><span class="ptag ta">Group Policy</span><span class="ptag tb">Domain Controller</span><span class="ptag tg">OU</span></div>
         <a href="https://drive.google.com/file/d/1YSX9aZKWIw1FFhW0rc7lgvyjni-52zmD/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
       </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3: FILE SERVER -->
+  <div class="cat-sec reveal">
+    <div class="cat-head">
+      <span class="cat-icon">📁</span>
+      <span class="cat-title"><span class="en-i">Project 3 — File Server &amp; Network Shares</span><span class="fr-i">Projet 3 — Serveur de Fichiers &amp; Partages Réseau</span></span>
+      <span class="cat-count">IN PROGRESS</span>
+    </div>
+    <div class="proj-grid">
       <div class="proj-card">
-        <div class="pnum"># A2</div>
-        <div class="ptitle"><span class="en-i">DNS &amp; DHCP Configuration</span><span class="fr-i">Configuration DNS &amp; DHCP</span></div>
-        <div class="psub"><span class="en-i">Configured DNS zones and DHCP scopes within a Windows Server domain, including file and print services.</span><span class="fr-i">Configuration de zones DNS et de plages DHCP dans un domaine Windows Server, incluant les services de fichiers et d'impression.</span></div>
-        <div class="ptags"><span class="ptag tb">DNS</span><span class="ptag tg">DHCP</span><span class="ptag ta">File &amp; Print</span></div>
-        <a href="https://drive.google.com/file/d/1V_3fLAIhl6Kz0WqlGmXW_0UW9Hrrc-Am/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
+        <div class="pnum">LAB · A3</div>
+        <div class="ptitle"><span class="en-i">Enterprise File Server — Permissions &amp; Shared Folders</span><span class="fr-i">Serveur de Fichiers d'Entreprise — Permissions &amp; Dossiers Partagés</span></div>
+        <div class="psub"><span class="en-i">Configured shared folders for HR, Finance, and IT departments with NTFS permissions, shared printers, and access control per department role.</span><span class="fr-i">Configuration de dossiers partagés pour les départements RH, Finance et TI avec permissions NTFS, imprimantes partagées et contrôle d'accès par rôle départemental.</span></div>
+        <div class="ptags"><span class="ptag tg">File Server</span><span class="ptag tb">NTFS Permissions</span><span class="ptag ta">Shared Folders</span><span class="ptag tg">Printer</span></div>
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4: SOFTWARE DEPLOYMENT -->
+  <div class="cat-sec reveal">
+    <div class="cat-head">
+      <span class="cat-icon">📦</span>
+      <span class="cat-title"><span class="en-i">Project 4 — Software Deployment &amp; Patch Management</span><span class="fr-i">Projet 4 — Déploiement de Logiciels &amp; Gestion des Correctifs</span></span>
+      <span class="cat-count">IN PROGRESS</span>
+    </div>
+    <div class="proj-grid">
       <div class="proj-card">
-        <div class="pnum"># A3</div>
-        <div class="ptitle"><span class="en-i">Endpoint Security &amp; Windows Systems Defense</span><span class="fr-i">Sécurité Endpoints &amp; Défense Windows</span></div>
-        <div class="psub"><span class="en-i">Windows hardening, Group Policy enforcement, and endpoint defence configuration.</span><span class="fr-i">Durcissement Windows, application de Stratégie de Groupe et configuration de défense endpoint.</span></div>
-        <div class="ptags"><span class="ptag tb">Windows</span><span class="ptag ta">Group Policy</span><span class="ptag tr">Hardening</span></div>
-        <a href="https://drive.google.com/file/d/1YSX9aZKWIw1FFhW0rc7lgvyjni-52zmD/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
+        <div class="pnum">LAB · A4</div>
+        <div class="ptitle"><span class="en-i">Enterprise Software Deployment via PDQ Deploy</span><span class="fr-i">Déploiement de Logiciels d'Entreprise via PDQ Deploy</span></div>
+        <div class="psub"><span class="en-i">Automated deployment of Firefox, Chrome, and 7-Zip across workstations using PDQ Deploy. Patch management and Windows Update configuration for a multi-machine environment.</span><span class="fr-i">Déploiement automatisé de Firefox, Chrome et 7-Zip sur les postes de travail via PDQ Deploy. Gestion des correctifs et configuration de Windows Update pour un environnement multi-machines.</span></div>
+        <div class="ptags"><span class="ptag tb">PDQ Deploy</span><span class="ptag tg">Software Deployment</span><span class="ptag ta">Patch Management</span><span class="ptag tg">Windows Update</span></div>
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 5: MICROSOFT 365 -->
+  <div class="cat-sec reveal">
+    <div class="cat-head">
+      <span class="cat-icon">☁️</span>
+      <span class="cat-title"><span class="en-i">Project 5 — Microsoft 365 Administration</span><span class="fr-i">Projet 5 — Administration Microsoft 365</span></span>
+      <span class="cat-count">IN PROGRESS</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="pnum">LAB · A5</div>
+        <div class="ptitle"><span class="en-i">Microsoft 365 Tenant Administration</span><span class="fr-i">Administration de Locataire Microsoft 365</span></div>
+        <div class="psub"><span class="en-i">User and group management, MFA configuration, Outlook setup, password reset procedures, and remote support workflow in Microsoft 365 Admin Center.</span><span class="fr-i">Gestion des utilisateurs et groupes, configuration MFA, configuration Outlook, procédures de réinitialisation de mot de passe et flux de travail de soutien à distance dans le Centre d'administration Microsoft 365.</span></div>
+        <div class="ptags"><span class="ptag tb">Microsoft 365</span><span class="ptag tg">MFA</span><span class="ptag ta">Outlook</span><span class="ptag tb">Admin Center</span></div>
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 6: HELP DESK KB -->
+  <div class="cat-sec reveal">
+    <div class="cat-head">
+      <span class="cat-icon">🎧</span>
+      <span class="cat-title"><span class="en-i">Project 6 — Help Desk Knowledge Base</span><span class="fr-i">Projet 6 — Base de Connaissances Centre d'Aide</span></span>
+      <span class="cat-count">IN PROGRESS</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="pnum">LAB · A6</div>
+        <div class="ptitle"><span class="en-i">IT Help Desk Knowledge Base — 30 Real Scenarios</span><span class="fr-i">Base de Connaissances Centre d'Aide TI — 30 Scénarios Réels</span></div>
+        <div class="psub"><span class="en-i">Documented solutions to 30+ common IT issues: User Locked Out, DNS Resolution Failure, Printer Offline, VPN Connection Failed, Outlook Crash, Windows Update Stuck, Slow Computer, Blue Screen, No Internet, Password Reset, and more.</span><span class="fr-i">Solutions documentées pour 30+ problèmes TI courants : Utilisateur Bloqué, Échec DNS, Imprimante Hors Ligne, VPN Échoué, Crash Outlook, Windows Update Bloqué, Ordinateur Lent, Écran Bleu, Pas d'Internet, Réinitialisation de Mot de Passe, et plus.</span></div>
+        <div class="ptags"><span class="ptag tg">Help Desk</span><span class="ptag tb">Troubleshooting</span><span class="ptag ta">Knowledge Base</span><span class="ptag tg">30+ Scenarios</span></div>
+        <span class="plink" style="cursor:default;opacity:0.5;"><span class="en-i">Coming Soon</span><span class="fr-i">Bientôt disponible</span></span>
       </div>
     </div>
   </div>
 
   <div class="note reveal">
-    <span class="en-i">These projects were completed as part of the same Dawson College AEC coursework as the 42 cybersecurity labs — grouped here separately to highlight the pure infrastructure and support skills most relevant to IT Support, Network Technician, and Desktop Support roles. Labs involving vulnerability scanning, packet analysis, and network reconnaissance are listed under the "42 Cyber Projects" tab.</span>
-    <span class="fr-i">Ces projets ont été complétés dans le cadre du même AEC au Collège Dawson que les 42 laboratoires de cybersécurité — regroupés ici séparément pour mettre en avant les compétences d'infrastructure pures les plus pertinentes pour les rôles de Soutien TI, Technicien Réseau et Soutien Bureautique. Les laboratoires impliquant l'analyse de vulnérabilités, l'analyse de paquets et la reconnaissance réseau sont listés sous l'onglet « 42 Projets Cyber ».</span>
+    <span class="en-i">Projects 1, 3, 4, 5, and 6 are in progress as part of the JobSkillShare IT Support course. Reports will be published here as each project is completed. Project 2 (Active Directory) is already available above.</span>
+    <span class="fr-i">Les projets 1, 3, 4, 5 et 6 sont en cours dans le cadre du cours IT Support de JobSkillShare. Les rapports seront publiés ici au fur et à mesure de leur complétion. Le projet 2 (Active Directory) est déjà disponible ci-dessus.</span>
   </div>
 
 </div>
 </div>
 
-<!-- ══ TAB: 42 CYBER PROJECTS ══ -->
+<!-- ══ 42 CYBER PROJECTS ══ -->
 <div id="tab-projects" class="page-section">
 <div class="wrap">
 
   <div class="proj-intro reveal">
-    <span class="en-i"><b>42 hands-on cybersecurity projects</b> completed as part of the AEC in Cybersecurity at Dawson College (2025–Present). Each project is a full PDF report — click <b>"View Report"</b>. Organized across 6 professional security domains, All labs were performed in a virtual environment.</span>
-    <span class="fr-i"><b>42 projets pratiques en cybersécurité</b> complétés dans le cadre de l'AEC en Cybersécurité au Collège Dawson (2025–Présent). Chaque projet est un rapport PDF complet — cliquez sur <b>« Voir le Rapport »</b>. Organisés sur 6 domaines de sécurité professionnels, tous les laboratoires ont été réalisés dans un environnement virtuel.</span>
+    <span class="en-i"><b>42 hands-on cybersecurity lab projects</b> completed as part of the AEC in Cybersecurity at Dawson College (2025–Present). Each project is a full PDF report. All labs performed in a virtual environment. Organized across 6 professional security domains.</span>
+    <span class="fr-i"><b>42 projets de laboratoire pratiques en cybersécurité</b> complétés dans le cadre de l'AEC en Cybersécurité au Collège Dawson (2025–Présent). Chaque projet est un rapport PDF complet. Tous les labs réalisés en environnement virtuel. Organisés sur 6 domaines de sécurité professionnels.</span>
   </div>
 
   <!-- THREATS -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">⚠️</span>
-      <span class="cat-title"><span class="en-i">Threats &amp; Risks</span><span class="fr-i">Menaces &amp; Risques</span></span>
-      <span class="cat-count">1 <span class="en-i">PROJECT</span><span class="fr-i">PROJET</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">⚠️</span><span class="cat-title"><span class="en-i">Threats &amp; Risks</span><span class="fr-i">Menaces &amp; Risques</span></span><span class="cat-count">1</span></div>
     <div class="proj-grid">
-      <div class="proj-card">
-        <div class="pnum"># 01</div>
-        <div class="ptitle"><span class="en-i">Hosting &amp; Monitoring a Containerized Flask Application</span><span class="fr-i">Hébergement &amp; Surveillance d'une Application Flask Conteneurisée</span></div>
-        <div class="psub"><span class="en-i">Using Docker and Wazuh for Enhanced Cloud-Native Security</span><span class="fr-i">Docker et Wazuh pour une Sécurité Cloud-Native Renforcée</span></div>
-        <div class="ptags"><span class="ptag tb">Docker</span><span class="ptag tg">Wazuh</span><span class="ptag ta">Flask</span><span class="ptag tg">SIEM</span></div>
-        <a href="https://drive.google.com/file/d/1e3p6MYlzXe1alyCJylBzSURtEzNo9ryK/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a>
-      </div>
+      <div class="proj-card"><div class="pnum"># 01</div><div class="ptitle"><span class="en-i">Hosting &amp; Monitoring a Containerized Flask Application</span><span class="fr-i">Hébergement &amp; Surveillance Application Flask Conteneurisée</span></div><div class="psub"><span class="en-i">Docker and Wazuh for Cloud-Native Security</span><span class="fr-i">Docker et Wazuh pour la Sécurité Cloud-Native</span></div><div class="ptags"><span class="ptag tb">Docker</span><span class="ptag tg">Wazuh</span><span class="ptag ta">Flask</span><span class="ptag tg">SIEM</span></div><a href="https://drive.google.com/file/d/1e3p6MYlzXe1alyCJylBzSURtEzNo9ryK/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
   <!-- VULNERABILITIES -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">🔍</span>
-      <span class="cat-title"><span class="en-i">Managing Vulnerabilities</span><span class="fr-i">Gestion des Vulnérabilités</span></span>
-      <span class="cat-count">9 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">🔍</span><span class="cat-title"><span class="en-i">Managing Vulnerabilities</span><span class="fr-i">Gestion des Vulnérabilités</span></span><span class="cat-count">9</span></div>
     <div class="proj-grid">
-      <div class="proj-card"><div class="pnum"># 02</div><div class="ptitle"><span class="en-i">Vulnerability Intelligence Report</span><span class="fr-i">Rapport de Renseignement sur les Vulnérabilités</span></div><div class="psub"><span class="en-i">Threat intelligence gathering and vulnerability analysis.</span><span class="fr-i">Collecte de renseignements sur les menaces et analyse des vulnérabilités.</span></div><div class="ptags"><span class="ptag tr">CVE</span><span class="ptag ta">Threat Intel</span><span class="ptag tg">Reporting</span></div><a href="https://drive.google.com/file/d/1_gK29frWt2ZRNcFNw43lkz6ZBFiWDHxo/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 03</div><div class="ptitle"><span class="en-i">Risk-Based Vulnerability Assessment</span><span class="fr-i">Évaluation des Vulnérabilités Basée sur le Risque</span></div><div class="psub"><span class="en-i">Prioritizing vulnerabilities using business impact and risk scoring.</span><span class="fr-i">Priorisation selon l'impact métier et le score de risque.</span></div><div class="ptags"><span class="ptag tr">Risk</span><span class="ptag ta">CVSS</span><span class="ptag tg">Prioritization</span></div><a href="https://drive.google.com/file/d/1G-l6TSxweegmX-zkvIZTAnDjcWwbKQbE/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 04</div><div class="ptitle"><span class="en-i">CVE to MITRE ATT&amp;CK Mapping</span><span class="fr-i">Cartographie CVE vers MITRE ATT&amp;CK</span></div><div class="psub"><span class="en-i">Mapping known vulnerabilities to adversary TTPs.</span><span class="fr-i">Cartographie des vulnérabilités connues aux TTPs adversariaux.</span></div><div class="ptags"><span class="ptag tr">MITRE ATT&CK</span><span class="ptag ta">CVE</span><span class="ptag tb">TTP Mapping</span></div><a href="https://drive.google.com/file/d/1T9Wc1gtKSb_YXrN6rc7stkLiqIRVvP44/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 05</div><div class="ptitle"><span class="en-i">ATT&amp;CK Part 2 — Cross-Framework Integration</span><span class="fr-i">ATT&amp;CK Partie 2 — Intégration Multi-Cadres</span></div><div class="psub"><span class="en-i">Integrating MITRE ATT&amp;CK with complementary security frameworks.</span><span class="fr-i">Intégration de MITRE ATT&amp;CK avec des cadres de sécurité complémentaires.</span></div><div class="ptags"><span class="ptag tr">MITRE</span><span class="ptag tb">Framework</span><span class="ptag tg">Integration</span></div><a href="https://drive.google.com/file/d/17CzpmTBqbVwXFY6_-JS7R1eQYeLH98KN/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 06</div><div class="ptitle"><span class="en-i">Network Reconnaissance &amp; Service Enumeration</span><span class="fr-i">Reconnaissance Réseau &amp; Énumération de Services</span></div><div class="psub"><span class="en-i">Active scanning, port enumeration, and service fingerprinting.</span><span class="fr-i">Analyse active, énumération de ports et empreinte de services.</span></div><div class="ptags"><span class="ptag tr">Nmap</span><span class="ptag ta">Recon</span><span class="ptag tg">Enumeration</span></div><a href="https://drive.google.com/file/d/1L4hDhVr96KLR6rdRcdZ6HkugbPrA9V_d/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 07</div><div class="ptitle"><span class="en-i">Vulnerability Scanner Installation &amp; Configuration</span><span class="fr-i">Installation &amp; Configuration d'un Scanneur</span></div><div class="psub"><span class="en-i">Setting up OpenVAS/GVM for enterprise vulnerability scanning.</span><span class="fr-i">Configuration d'OpenVAS/GVM pour l'analyse d'entreprise.</span></div><div class="ptags"><span class="ptag tg">OpenVAS</span><span class="ptag tb">GVM</span><span class="ptag ta">Config</span></div><a href="https://drive.google.com/file/d/1Tg5mGiPtW1ejF4kw4miu7Y3436_KkJyM/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 08</div><div class="ptitle"><span class="en-i">Vulnerability Scanning &amp; Hardening with Greenbone</span><span class="fr-i">Analyse &amp; Durcissement avec Greenbone</span></div><div class="psub"><span class="en-i">End-to-end scanning and remediation using OpenVAS/Greenbone.</span><span class="fr-i">Analyse et remédiation complètes avec OpenVAS/Greenbone.</span></div><div class="ptags"><span class="ptag tg">Greenbone</span><span class="ptag tr">Hardening</span><span class="ptag tb">OpenVAS</span></div><a href="https://drive.google.com/file/d/1imhT_DkxtFpeY7JzzFzXQLDv80rjyjcZ/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 09</div><div class="ptitle"><span class="en-i">Calculating &amp; Contextualizing Risk Scores — CVSS v3.x</span><span class="fr-i">Calcul &amp; Contextualisation des Scores CVSS v3.x</span></div><div class="psub"><span class="en-i">Hands-on CVSS scoring with environmental and temporal metrics.</span><span class="fr-i">Calcul CVSS pratique avec métriques environnementales et temporelles.</span></div><div class="ptags"><span class="ptag ta">CVSS v3.x</span><span class="ptag tr">Risk Scoring</span><span class="ptag tg">Metrics</span></div><a href="https://drive.google.com/file/d/1DHdk_KqXu7D1w1fNQ4T2_5C8Hx2n3AD4/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 10</div><div class="ptitle"><span class="en-i">Web Application Scanning with OWASP ZAP</span><span class="fr-i">Analyse d'Applications Web avec OWASP ZAP</span></div><div class="psub"><span class="en-i">Automated and manual web app vulnerability scanning.</span><span class="fr-i">Analyse automatisée et manuelle des vulnérabilités web.</span></div><div class="ptags"><span class="ptag tr">OWASP ZAP</span><span class="ptag ta">Web Security</span><span class="ptag tb">DAST</span></div><a href="https://drive.google.com/file/d/11HOiGpGKutwe7I946IKk2wg3cWhExBiF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 02</div><div class="ptitle"><span class="en-i">Vulnerability Intelligence Report</span><span class="fr-i">Rapport de Renseignement Vulnérabilités</span></div><div class="psub"><span class="en-i">Threat intelligence and vulnerability analysis.</span><span class="fr-i">Renseignement sur les menaces et analyse des vulnérabilités.</span></div><div class="ptags"><span class="ptag tr">CVE</span><span class="ptag ta">Threat Intel</span><span class="ptag tg">Reporting</span></div><a href="https://drive.google.com/file/d/1_gK29frWt2ZRNcFNw43lkz6ZBFiWDHxo/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 03</div><div class="ptitle"><span class="en-i">Risk-Based Vulnerability Assessment</span><span class="fr-i">Évaluation des Vulnérabilités par le Risque</span></div><div class="psub"><span class="en-i">Prioritizing vulnerabilities using business impact and risk scoring.</span><span class="fr-i">Priorisation des vulnérabilités par impact métier et score de risque.</span></div><div class="ptags"><span class="ptag tr">Risk</span><span class="ptag ta">CVSS</span><span class="ptag tg">Prioritization</span></div><a href="https://drive.google.com/file/d/1G-l6TSxweegmX-zkvIZTAnDjcWwbKQbE/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 04</div><div class="ptitle"><span class="en-i">CVE to MITRE ATT&amp;CK Mapping</span><span class="fr-i">Cartographie CVE vers MITRE ATT&amp;CK</span></div><div class="psub"><span class="en-i">Mapping vulnerabilities to adversary TTPs.</span><span class="fr-i">Cartographie des vulnérabilités aux TTPs adversariaux.</span></div><div class="ptags"><span class="ptag tr">MITRE ATT&CK</span><span class="ptag ta">CVE</span><span class="ptag tb">TTP</span></div><a href="https://drive.google.com/file/d/1T9Wc1gtKSb_YXrN6rc7stkLiqIRVvP44/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 05</div><div class="ptitle"><span class="en-i">ATT&amp;CK Part 2 — Cross-Framework Integration</span><span class="fr-i">ATT&amp;CK Partie 2 — Intégration Multi-Cadres</span></div><div class="psub"><span class="en-i">MITRE ATT&amp;CK integrated with complementary frameworks.</span><span class="fr-i">MITRE ATT&amp;CK intégré avec des cadres complémentaires.</span></div><div class="ptags"><span class="ptag tr">MITRE</span><span class="ptag tb">Framework</span><span class="ptag tg">Integration</span></div><a href="https://drive.google.com/file/d/17CzpmTBqbVwXFY6_-JS7R1eQYeLH98KN/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 06</div><div class="ptitle"><span class="en-i">Network Reconnaissance &amp; Service Enumeration</span><span class="fr-i">Reconnaissance Réseau &amp; Énumération de Services</span></div><div class="psub"><span class="en-i">Active scanning, port enumeration, service fingerprinting.</span><span class="fr-i">Analyse active, énumération de ports et empreinte de services.</span></div><div class="ptags"><span class="ptag tr">Nmap</span><span class="ptag ta">Recon</span><span class="ptag tg">Enumeration</span></div><a href="https://drive.google.com/file/d/1L4hDhVr96KLR6rdRcdZ6HkugbPrA9V_d/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 07</div><div class="ptitle"><span class="en-i">Vulnerability Scanner Installation &amp; Configuration</span><span class="fr-i">Installation &amp; Configuration Scanneur de Vulnérabilités</span></div><div class="psub"><span class="en-i">Setting up OpenVAS/GVM for enterprise scanning.</span><span class="fr-i">Configuration d'OpenVAS/GVM pour l'analyse d'entreprise.</span></div><div class="ptags"><span class="ptag tg">OpenVAS</span><span class="ptag tb">GVM</span><span class="ptag ta">Config</span></div><a href="https://drive.google.com/file/d/1Tg5mGiPtW1ejF4kw4miu7Y3436_KkJyM/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 08</div><div class="ptitle"><span class="en-i">Vulnerability Scanning &amp; Hardening with Greenbone</span><span class="fr-i">Analyse &amp; Durcissement avec Greenbone</span></div><div class="psub"><span class="en-i">End-to-end scanning and remediation with Greenbone.</span><span class="fr-i">Analyse et remédiation complètes avec Greenbone.</span></div><div class="ptags"><span class="ptag tg">Greenbone</span><span class="ptag tr">Hardening</span><span class="ptag tb">OpenVAS</span></div><a href="https://drive.google.com/file/d/1imhT_DkxtFpeY7JzzFzXQLDv80rjyjcZ/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 09</div><div class="ptitle"><span class="en-i">Calculating Risk Scores — CVSS v3.x</span><span class="fr-i">Calcul des Scores de Risque — CVSS v3.x</span></div><div class="psub"><span class="en-i">CVSS scoring with environmental and temporal metrics.</span><span class="fr-i">Calcul CVSS avec métriques environnementales et temporelles.</span></div><div class="ptags"><span class="ptag ta">CVSS v3.x</span><span class="ptag tr">Risk Scoring</span><span class="ptag tg">Metrics</span></div><a href="https://drive.google.com/file/d/1DHdk_KqXu7D1w1fNQ4T2_5C8Hx2n3AD4/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 10</div><div class="ptitle"><span class="en-i">Web Application Scanning with OWASP ZAP</span><span class="fr-i">Analyse Web avec OWASP ZAP</span></div><div class="psub"><span class="en-i">Automated and manual web app vulnerability scanning.</span><span class="fr-i">Analyse automatisée et manuelle des vulnérabilités web.</span></div><div class="ptags"><span class="ptag tr">OWASP ZAP</span><span class="ptag ta">Web Security</span><span class="ptag tb">DAST</span></div><a href="https://drive.google.com/file/d/11HOiGpGKutwe7I946IKk2wg3cWhExBiF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
-  <!-- INTRUSION TESTING -->
+  <!-- INTRUSION -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">💀</span>
-      <span class="cat-title"><span class="en-i">Intrusion Testing</span><span class="fr-i">Tests d'Intrusion</span></span>
-      <span class="cat-count">6 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">💀</span><span class="cat-title"><span class="en-i">Intrusion Testing</span><span class="fr-i">Tests d'Intrusion</span></span><span class="cat-count">6</span></div>
     <div class="proj-grid">
-      <div class="proj-card"><div class="pnum"># 11</div><div class="ptitle"><span class="en-i">Building the Invisible</span><span class="fr-i">Construire l'Invisible</span></div><div class="psub"><span class="en-i">Stealth infrastructure design and covert channel establishment.</span><span class="fr-i">Conception d'infrastructure furtive et canaux secrets.</span></div><div class="ptags"><span class="ptag tr">Stealth</span><span class="ptag ta">Pen Test</span><span class="ptag tg">Infrastructure</span></div><a href="https://drive.google.com/file/d/1IHuHw2XuSUrClfC1JOni_ZnJdlYVc1ww/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 12</div><div class="ptitle"><span class="en-i">Passive Reconnaissance — OSINT &amp; DNS Enumeration</span><span class="fr-i">Reconnaissance Passive — OSINT &amp; DNS</span></div><div class="psub"><span class="en-i">Full passive recon on example.com using OSINT and DNS analysis.</span><span class="fr-i">Reconnaissance passive complète via OSINT et analyse DNS.</span></div><div class="ptags"><span class="ptag tb">OSINT</span><span class="ptag ta">DNS</span><span class="ptag tg">Passive Recon</span></div><a href="https://drive.google.com/file/d/149eB_fKITPae7jiUZ09uIhQ1z-xZQHNq/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 13</div><div class="ptitle"><span class="en-i">Social Engineering &amp; Phishing Simulation</span><span class="fr-i">Ingénierie Sociale &amp; Simulation de Phishing</span></div><div class="psub"><span class="en-i">Simulated phishing campaign design and awareness assessment.</span><span class="fr-i">Conception de campagne de phishing simulée.</span></div><div class="ptags"><span class="ptag tr">Phishing</span><span class="ptag ta">Social Eng.</span><span class="ptag tb">Simulation</span></div><a href="https://drive.google.com/file/d/1cdKP2UvFdKJtBXYIsIJe_UDuqOiwEU5_/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 14</div><div class="ptitle"><span class="en-i">Active Reconnaissance on a Controlled Mock Domain</span><span class="fr-i">Reconnaissance Active sur un Domaine Contrôlé</span></div><div class="psub"><span class="en-i">Hands-on active recon techniques against a controlled lab.</span><span class="fr-i">Techniques de reconnaissance active en environnement contrôlé.</span></div><div class="ptags"><span class="ptag tr">Active Recon</span><span class="ptag ta">Nmap</span><span class="ptag tg">Lab</span></div><a href="https://drive.google.com/file/d/1qmN29UZ19QsdHdUgJjarl7ptt2IPKUgF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 15</div><div class="ptitle"><span class="en-i">System Hacking: From Exploitation to Persistence</span><span class="fr-i">Piratage Système : De l'Exploitation à la Persistance</span></div><div class="psub"><span class="en-i">Full attack chain — exploitation, privilege escalation, and persistence.</span><span class="fr-i">Chaîne d'attaque complète — exploitation, escalade et persistance.</span></div><div class="ptags"><span class="ptag tr">Exploitation</span><span class="ptag tr">Persistence</span><span class="ptag ta">Metasploit</span></div><a href="https://drive.google.com/file/d/1rBZGrxKekAkjY6v6B3wlbWfeaRQRocGg/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 16</div><div class="ptitle"><span class="en-i">DVWA &amp; OWASP Juice Shop Exploitation</span><span class="fr-i">Exploitation DVWA &amp; OWASP Juice Shop</span></div><div class="psub"><span class="en-i">Exploiting OWASP Top 10 in intentionally vulnerable applications.</span><span class="fr-i">Exploitation du Top 10 OWASP dans des applications vulnérables.</span></div><div class="ptags"><span class="ptag tr">DVWA</span><span class="ptag ta">Juice Shop</span><span class="ptag tb">OWASP Top 10</span></div><a href="https://drive.google.com/file/d/16Us2gk-qler7fNBzWm0x-f3IJyqxjdyI/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 11</div><div class="ptitle"><span class="en-i">Building the Invisible</span><span class="fr-i">Construire l'Invisible</span></div><div class="psub"><span class="en-i">Stealth infrastructure design and covert channel establishment.</span><span class="fr-i">Conception d'infrastructure furtive et canaux secrets.</span></div><div class="ptags"><span class="ptag tr">Stealth</span><span class="ptag ta">Pen Test</span></div><a href="https://drive.google.com/file/d/1IHuHw2XuSUrClfC1JOni_ZnJdlYVc1ww/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 12</div><div class="ptitle"><span class="en-i">Passive Reconnaissance — OSINT &amp; DNS</span><span class="fr-i">Reconnaissance Passive — OSINT &amp; DNS</span></div><div class="psub"><span class="en-i">Full passive recon using OSINT and DNS analysis.</span><span class="fr-i">Reconnaissance passive complète via OSINT et DNS.</span></div><div class="ptags"><span class="ptag tb">OSINT</span><span class="ptag ta">DNS</span><span class="ptag tg">Passive Recon</span></div><a href="https://drive.google.com/file/d/149eB_fKITPae7jiUZ09uIhQ1z-xZQHNq/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 13</div><div class="ptitle"><span class="en-i">Social Engineering &amp; Phishing Simulation</span><span class="fr-i">Ingénierie Sociale &amp; Phishing</span></div><div class="psub"><span class="en-i">Phishing campaign design and awareness assessment.</span><span class="fr-i">Conception de campagne de phishing simulée.</span></div><div class="ptags"><span class="ptag tr">Phishing</span><span class="ptag ta">Social Eng.</span><span class="ptag tb">Simulation</span></div><a href="https://drive.google.com/file/d/1cdKP2UvFdKJtBXYIsIJe_UDuqOiwEU5_/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 14</div><div class="ptitle"><span class="en-i">Active Reconnaissance — Controlled Lab</span><span class="fr-i">Reconnaissance Active — Lab Contrôlé</span></div><div class="psub"><span class="en-i">Active recon techniques against a controlled environment.</span><span class="fr-i">Techniques de reconnaissance active en environnement contrôlé.</span></div><div class="ptags"><span class="ptag tr">Active Recon</span><span class="ptag ta">Nmap</span><span class="ptag tg">Lab</span></div><a href="https://drive.google.com/file/d/1qmN29UZ19QsdHdUgJjarl7ptt2IPKUgF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 15</div><div class="ptitle"><span class="en-i">System Hacking: Exploitation to Persistence</span><span class="fr-i">Piratage Système : Exploitation à Persistance</span></div><div class="psub"><span class="en-i">Full attack chain — exploitation, privilege escalation, persistence.</span><span class="fr-i">Chaîne d'attaque complète — exploitation, escalade, persistance.</span></div><div class="ptags"><span class="ptag tr">Exploitation</span><span class="ptag ta">Metasploit</span></div><a href="https://drive.google.com/file/d/1rBZGrxKekAkjY6v6B3wlbWfeaRQRocGg/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 16</div><div class="ptitle"><span class="en-i">DVWA &amp; OWASP Juice Shop Exploitation</span><span class="fr-i">Exploitation DVWA &amp; OWASP Juice Shop</span></div><div class="psub"><span class="en-i">OWASP Top 10 in intentionally vulnerable applications.</span><span class="fr-i">Top 10 OWASP dans des applications intentionnellement vulnérables.</span></div><div class="ptags"><span class="ptag tr">DVWA</span><span class="ptag ta">Juice Shop</span><span class="ptag tb">OWASP Top 10</span></div><a href="https://drive.google.com/file/d/16Us2gk-qler7fNBzWm0x-f3IJyqxjdyI/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
   <!-- INCIDENT HANDLING -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">🚨</span>
-      <span class="cat-title"><span class="en-i">Incident Handling &amp; Security Concepts</span><span class="fr-i">Gestion des Incidents &amp; Concepts de Sécurité</span></span>
-      <span class="cat-count">7 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">🚨</span><span class="cat-title"><span class="en-i">Incident Handling &amp; Security Concepts</span><span class="fr-i">Gestion des Incidents &amp; Concepts de Sécurité</span></span><span class="cat-count">7</span></div>
     <div class="proj-grid">
-      <div class="proj-card"><div class="pnum"># 17</div><div class="ptitle"><span class="en-i">First Response &amp; Evidence Handling</span><span class="fr-i">Première Réponse &amp; Gestion des Preuves</span></div><div class="psub"><span class="en-i">Digital forensics first response: evidence preservation and chain of custody.</span><span class="fr-i">Forensique numérique : préservation des preuves et chaîne de custody.</span></div><div class="ptags"><span class="ptag tb">Forensics</span><span class="ptag ta">Evidence</span><span class="ptag tg">IR</span></div><a href="https://drive.google.com/file/d/17UvCxdPhPv7RmFuMA-x3jyzmsP0Wqr9y/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 18</div><div class="ptitle"><span class="en-i">Cyber Threats &amp; IR Frameworks — MediCasa Scenario</span><span class="fr-i">Menaces Cyber &amp; Cadres IR — Scénario MediCasa</span></div><div class="psub"><span class="en-i">Attack vectors and IR frameworks for a regional hospital group.</span><span class="fr-i">Vecteurs d'attaque et cadres IR pour un groupe hospitalier.</span></div><div class="ptags"><span class="ptag tr">IR Framework</span><span class="ptag ta">Healthcare</span><span class="ptag tb">Scenario</span></div><a href="https://drive.google.com/file/d/1NgoiHuCGRYkBxVj7OXw32yXKM9xS7nbR/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 19</div><div class="ptitle"><span class="en-i">IH&amp;R Process Analysis — SecureNorth Incident</span><span class="fr-i">Analyse IH&amp;R — Incident SecureNorth</span></div><div class="psub"><span class="en-i">Incident SN-2026-0422-0917: containment, eradication, recovery.</span><span class="fr-i">Incident SN-2026-0422-0917 : confinement, éradication et récupération.</span></div><div class="ptags"><span class="ptag tr">IH&R</span><span class="ptag ta">Analysis</span><span class="ptag tg">Containment</span></div><a href="https://drive.google.com/file/d/18gfo-5gorEq9-Vz7zYuV73XjIn8TWaFA/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 20</div><div class="ptitle"><span class="en-i">Empirical Literature vs. Marketing Claims</span><span class="fr-i">Littérature Empirique vs. Claims Marketing</span></div><div class="psub"><span class="en-i">Research: Does evidence support cybersecurity product marketing?</span><span class="fr-i">Recherche : Les preuves soutiennent-elles le marketing des produits cybersécurité ?</span></div><div class="ptags"><span class="ptag tb">Research</span><span class="ptag ta">Literature</span><span class="ptag tg">Critical Analysis</span></div><a href="https://drive.google.com/file/d/1SvUsN9yebzi5zbzhwZo1r1KueD3qEeC3/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 21</div><div class="ptitle"><span class="en-i">Analyzing Email Headers &amp; Tracing Attacks</span><span class="fr-i">Analyse des En-têtes d'Email &amp; Traçage des Attaques</span></div><div class="psub"><span class="en-i">Header forensics, sender tracing, and phishing attribution.</span><span class="fr-i">Forensique des en-têtes, traçage de l'expéditeur et attribution.</span></div><div class="ptags"><span class="ptag tr">Email Forensics</span><span class="ptag ta">Headers</span><span class="ptag tb">Attribution</span></div><a href="https://drive.google.com/file/d/1qoLemueCiz9tYyafHm3irRn95TcIvy7_/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 22</div><div class="ptitle"><span class="en-i">Malware Analysis Report — EICAR Test File</span><span class="fr-i">Rapport d'Analyse de Malware — EICAR</span></div><div class="psub"><span class="en-i">Static and dynamic analysis of EICAR test file; AV detection review.</span><span class="fr-i">Analyse statique et dynamique du fichier EICAR ; revue de détection AV.</span></div><div class="ptags"><span class="ptag tr">Malware</span><span class="ptag ta">EICAR</span><span class="ptag tb">Static Analysis</span></div><a href="https://drive.google.com/file/d/1RSlX53OPN04J_ykcXMky3Mreb5c0CdOu/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 23</div><div class="ptitle"><span class="en-i">Network Traffic Analysis &amp; Incident Validation</span><span class="fr-i">Analyse du Trafic Réseau &amp; Validation d'Incidents</span></div><div class="psub"><span class="en-i">Wireshark-based traffic capture, anomaly detection, and incident validation.</span><span class="fr-i">Capture de trafic Wireshark, détection d'anomalies et validation.</span></div><div class="ptags"><span class="ptag tb">Wireshark</span><span class="ptag ta">Traffic Analysis</span><span class="ptag tg">Validation</span></div><a href="https://drive.google.com/file/d/1diCPt1Iq7ThZ448DViNTb1SNbVolXCBS/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 17</div><div class="ptitle"><span class="en-i">First Response &amp; Evidence Handling</span><span class="fr-i">Première Réponse &amp; Gestion des Preuves</span></div><div class="psub"><span class="en-i">Forensics first response: evidence preservation and chain of custody.</span><span class="fr-i">Première réponse forensique : préservation des preuves et chaîne de custody.</span></div><div class="ptags"><span class="ptag tb">Forensics</span><span class="ptag ta">Evidence</span><span class="ptag tg">IR</span></div><a href="https://drive.google.com/file/d/17UvCxdPhPv7RmFuMA-x3jyzmsP0Wqr9y/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 18</div><div class="ptitle"><span class="en-i">Cyber Threats &amp; IR Frameworks — MediCasa</span><span class="fr-i">Menaces Cyber &amp; IR — MediCasa</span></div><div class="psub"><span class="en-i">Attack vectors and IR frameworks for a hospital group scenario.</span><span class="fr-i">Vecteurs d'attaque et cadres IR pour un groupe hospitalier.</span></div><div class="ptags"><span class="ptag tr">IR Framework</span><span class="ptag ta">Healthcare</span></div><a href="https://drive.google.com/file/d/1NgoiHuCGRYkBxVj7OXw32yXKM9xS7nbR/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 19</div><div class="ptitle"><span class="en-i">IH&amp;R Analysis — SecureNorth Incident</span><span class="fr-i">Analyse IH&amp;R — Incident SecureNorth</span></div><div class="psub"><span class="en-i">SN-2026-0422-0917: containment, eradication, recovery analysis.</span><span class="fr-i">SN-2026-0422-0917 : confinement, éradication et récupération.</span></div><div class="ptags"><span class="ptag tr">IH&R</span><span class="ptag tg">Containment</span></div><a href="https://drive.google.com/file/d/18gfo-5gorEq9-Vz7zYuV73XjIn8TWaFA/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 20</div><div class="ptitle"><span class="en-i">Empirical Literature vs. Marketing Claims</span><span class="fr-i">Littérature Empirique vs. Marketing</span></div><div class="psub"><span class="en-i">Does evidence support cybersecurity product marketing?</span><span class="fr-i">Les preuves soutiennent-elles le marketing cybersécurité ?</span></div><div class="ptags"><span class="ptag tb">Research</span><span class="ptag tg">Critical Analysis</span></div><a href="https://drive.google.com/file/d/1SvUsN9yebzi5zbzhwZo1r1KueD3qEeC3/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 21</div><div class="ptitle"><span class="en-i">Analyzing Email Headers &amp; Tracing Attacks</span><span class="fr-i">Analyse En-têtes Email &amp; Traçage</span></div><div class="psub"><span class="en-i">Header forensics, sender tracing, phishing attribution.</span><span class="fr-i">Forensique des en-têtes, traçage et attribution de phishing.</span></div><div class="ptags"><span class="ptag tr">Email Forensics</span><span class="ptag tb">Attribution</span></div><a href="https://drive.google.com/file/d/1qoLemueCiz9tYyafHm3irRn95TcIvy7_/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 22</div><div class="ptitle"><span class="en-i">Malware Analysis — EICAR Test File</span><span class="fr-i">Analyse Malware — Fichier EICAR</span></div><div class="psub"><span class="en-i">Static and dynamic analysis of EICAR; AV detection review.</span><span class="fr-i">Analyse statique et dynamique EICAR ; revue de détection AV.</span></div><div class="ptags"><span class="ptag tr">Malware</span><span class="ptag ta">EICAR</span><span class="ptag tb">Static Analysis</span></div><a href="https://drive.google.com/file/d/1RSlX53OPN04J_ykcXMky3Mreb5c0CdOu/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 23</div><div class="ptitle"><span class="en-i">Network Traffic Analysis &amp; Incident Validation</span><span class="fr-i">Analyse Trafic Réseau &amp; Validation</span></div><div class="psub"><span class="en-i">Wireshark traffic capture, anomaly detection, incident validation.</span><span class="fr-i">Capture Wireshark, détection d'anomalies et validation d'incidents.</span></div><div class="ptags"><span class="ptag tb">Wireshark</span><span class="ptag ta">Traffic Analysis</span><span class="ptag tg">Validation</span></div><a href="https://drive.google.com/file/d/1diCPt1Iq7ThZ448DViNTb1SNbVolXCBS/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
   <!-- COMPLIANCE -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">📋</span>
-      <span class="cat-title"><span class="en-i">Cybersecurity Legislation &amp; Compliance</span><span class="fr-i">Législation &amp; Conformité</span></span>
-      <span class="cat-count">12 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">📋</span><span class="cat-title"><span class="en-i">Legislation &amp; Compliance</span><span class="fr-i">Législation &amp; Conformité</span></span><span class="cat-count">12</span></div>
     <div class="proj-grid">
-      <div class="proj-card"><div class="pnum"># 24</div><div class="ptitle"><span class="en-i">Comprehensive Cybersecurity Compliance Assessment</span><span class="fr-i">Évaluation Complète de Conformité</span></div><div class="psub"><span class="en-i">NorthStream Technologies Inc. — full compliance assessment report.</span><span class="fr-i">NorthStream Technologies Inc. — rapport complet d'évaluation.</span></div><div class="ptags"><span class="ptag tb">Compliance</span><span class="ptag ta">NorthStream</span><span class="ptag tg">Assessment</span></div><a href="https://drive.google.com/file/d/17yyIyOtr-ujG6pn_iB8xO3pzCe8pODU1/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 25</div><div class="ptitle"><span class="en-i">Legal Requirements Register — Task 1</span><span class="fr-i">Registre des Exigences Légales — Tâche 1</span></div><div class="psub"><span class="en-i">Identifying applicable legal cybersecurity requirements for NorthStream Energy.</span><span class="fr-i">Identification des exigences légales applicables pour NorthStream Energy.</span></div><div class="ptags"><span class="ptag tb">LRR</span><span class="ptag ta">Legal</span><span class="ptag tg">Energy Sector</span></div><a href="https://drive.google.com/file/d/1pI8XofpKE4yKPTu_M_8O5boSSNds_CYg/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 26</div><div class="ptitle"><span class="en-i">International Compliance Matrix — Task 2</span><span class="fr-i">Matrice de Conformité Internationale — Tâche 2</span></div><div class="psub"><span class="en-i">Multi-jurisdictional compliance mapping for NorthStream.</span><span class="fr-i">Cartographie de conformité multi-juridictionnelle pour NorthStream.</span></div><div class="ptags"><span class="ptag tb">ICM</span><span class="ptag ta">Multi-Jurisdiction</span><span class="ptag tg">GDPR</span></div><a href="https://drive.google.com/file/d/1Z7oo4ZNwNR59ju5_af7JCSH-sO1tGdgF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 27</div><div class="ptitle"><span class="en-i">Framework Selection &amp; Control Mapping — Task 3</span><span class="fr-i">Sélection de Cadres &amp; Cartographie — Tâche 3</span></div><div class="psub"><span class="en-i">Selecting and mapping security controls to industry standards.</span><span class="fr-i">Sélection et cartographie des contrôles aux normes industrielles.</span></div><div class="ptags"><span class="ptag tb">NIST</span><span class="ptag ta">ISO 27001</span><span class="ptag tg">Control Mapping</span></div><a href="https://drive.google.com/file/d/1_9cDskF9j0uoHT15eIk3X4rdC5gWCsAP/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 28–29</div><div class="ptitle"><span class="en-i">Compliance Assessment Plan — Task 4</span><span class="fr-i">Plan d'Évaluation de Conformité — Tâche 4</span></div><div class="psub"><span class="en-i">Developing a structured compliance assessment plan (Module 5).</span><span class="fr-i">Développement d'un plan structuré d'évaluation de conformité.</span></div><div class="ptags"><span class="ptag tb">Assessment Plan</span><span class="ptag ta">Module 5</span><span class="ptag tg">Planning</span></div><a href="https://drive.google.com/file/d/1cX3Afwik8hFWfjoPgcglMJYVVclhIGWl/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 30</div><div class="ptitle"><span class="en-i">Compliance Assessment Plan — Executive Summary</span><span class="fr-i">Plan d'Évaluation — Résumé Exécutif</span></div><div class="psub"><span class="en-i">C-suite executive summary of the full NorthStream assessment.</span><span class="fr-i">Résumé exécutif pour la direction de l'évaluation complète NorthStream.</span></div><div class="ptags"><span class="ptag tb">Executive</span><span class="ptag ta">Summary</span><span class="ptag tg">NorthStream</span></div><a href="https://drive.google.com/file/d/1EZu_ZmI8U2DaW1f5b8za4gHx8NnXE043/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 31</div><div class="ptitle"><span class="en-i">Configuration Baseline Checklist — Web Server</span><span class="fr-i">Liste de Contrôle Baseline — Serveur Web</span></div><div class="psub"><span class="en-i">Hardening checklist for NorthStream web server infrastructure.</span><span class="fr-i">Liste de contrôle de durcissement pour l'infrastructure serveur web.</span></div><div class="ptags"><span class="ptag tr">Hardening</span><span class="ptag ta">Baseline</span><span class="ptag tb">Web Server</span></div><a href="https://drive.google.com/file/d/1z-Mt4pBRkPc4bzOUD7-aj3BzrdWFiEnf/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 32</div><div class="ptitle"><span class="en-i">Ubuntu 24.04 LTS Security Compliance Assessment</span><span class="fr-i">Évaluation de Conformité Ubuntu 24.04 LTS</span></div><div class="psub"><span class="en-i">CIS Benchmark compliance assessment on Ubuntu 24.04 LTS.</span><span class="fr-i">Évaluation de conformité CIS Benchmark sur Ubuntu 24.04 LTS.</span></div><div class="ptags"><span class="ptag tg">Ubuntu</span><span class="ptag ta">CIS Benchmark</span><span class="ptag tb">Linux</span></div><a href="https://drive.google.com/file/d/1tprPgv7sufAo6qk2q5YLhA78hMbmY7_B/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 33</div><div class="ptitle"><span class="en-i">Scripted Verification Report — NorthStream</span><span class="fr-i">Rapport de Vérification Scriptée — NorthStream</span></div><div class="psub"><span class="en-i">Automated compliance verification using scripted checks.</span><span class="fr-i">Vérification de conformité automatisée via contrôles scriptés.</span></div><div class="ptags"><span class="ptag tg">Scripting</span><span class="ptag ta">Automation</span><span class="ptag tb">Verification</span></div><a href="https://drive.google.com/file/d/1wnOZnuVpJ118wgPzPovCrq6vXb34rXBV/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 34</div><div class="ptitle"><span class="en-i">Legal Requirements Register — Full LRR</span><span class="fr-i">Registre Complet des Exigences Légales</span></div><div class="psub"><span class="en-i">Complete cybersecurity legislation register for NorthStream Energy &amp; Logistics.</span><span class="fr-i">Registre complet de législation pour NorthStream Energy &amp; Logistics.</span></div><div class="ptags"><span class="ptag tb">LRR</span><span class="ptag ta">Legislation</span><span class="ptag tg">Compliance</span></div><a href="https://drive.google.com/file/d/1lAQ84XY2JqYrEOpVKc7IrgwSBWG5zNrj/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 35</div><div class="ptitle"><span class="en-i">International Compliance Matrix — Conflict Resolution</span><span class="fr-i">Matrice de Conformité — Résolution de Conflits</span></div><div class="psub"><span class="en-i">Multi-jurisdictional conflict resolution and risk prioritization.</span><span class="fr-i">Résolution de conflits multi-juridictionnels et priorisation des risques.</span></div><div class="ptags"><span class="ptag tb">ICM</span><span class="ptag ta">Risk Priority</span><span class="ptag tg">Multi-Jurisdiction</span></div><a href="https://drive.google.com/file/d/1lOFDrcDfGlbQS8lnJLWdfmnkNMzl9Pvo/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 24</div><div class="ptitle"><span class="en-i">Comprehensive Compliance Assessment — NorthStream</span><span class="fr-i">Évaluation Complète de Conformité — NorthStream</span></div><div class="psub"><span class="en-i">Full cybersecurity compliance assessment for NorthStream Technologies Inc.</span><span class="fr-i">Évaluation complète de conformité cybersécurité pour NorthStream Technologies Inc.</span></div><div class="ptags"><span class="ptag tb">Compliance</span><span class="ptag tg">Assessment</span></div><a href="https://drive.google.com/file/d/17yyIyOtr-ujG6pn_iB8xO3pzCe8pODU1/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 25</div><div class="ptitle"><span class="en-i">Legal Requirements Register — Task 1</span><span class="fr-i">Registre des Exigences Légales — Tâche 1</span></div><div class="psub"><span class="en-i">Legal cybersecurity requirements for NorthStream Energy.</span><span class="fr-i">Exigences légales cybersécurité pour NorthStream Energy.</span></div><div class="ptags"><span class="ptag tb">LRR</span><span class="ptag ta">Legal</span><span class="ptag tg">Energy</span></div><a href="https://drive.google.com/file/d/1pI8XofpKE4yKPTu_M_8O5boSSNds_CYg/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 26</div><div class="ptitle"><span class="en-i">International Compliance Matrix — Task 2</span><span class="fr-i">Matrice de Conformité Internationale — Tâche 2</span></div><div class="psub"><span class="en-i">Multi-jurisdictional compliance mapping for NorthStream.</span><span class="fr-i">Cartographie de conformité multi-juridictionnelle pour NorthStream.</span></div><div class="ptags"><span class="ptag tb">ICM</span><span class="ptag tg">GDPR</span></div><a href="https://drive.google.com/file/d/1Z7oo4ZNwNR59ju5_af7JCSH-sO1tGdgF/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 27</div><div class="ptitle"><span class="en-i">Framework Selection &amp; Control Mapping — Task 3</span><span class="fr-i">Sélection de Cadres &amp; Cartographie — Tâche 3</span></div><div class="psub"><span class="en-i">Mapping security controls to NIST and ISO 27001.</span><span class="fr-i">Cartographie des contrôles vers NIST et ISO 27001.</span></div><div class="ptags"><span class="ptag tb">NIST</span><span class="ptag ta">ISO 27001</span></div><a href="https://drive.google.com/file/d/1_9cDskF9j0uoHT15eIk3X4rdC5gWCsAP/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 28–29</div><div class="ptitle"><span class="en-i">Compliance Assessment Plan — Task 4</span><span class="fr-i">Plan d'Évaluation de Conformité — Tâche 4</span></div><div class="psub"><span class="en-i">Structured compliance assessment plan — Module 5.</span><span class="fr-i">Plan d'évaluation de conformité structuré — Module 5.</span></div><div class="ptags"><span class="ptag tb">Assessment</span><span class="ptag tg">Planning</span></div><a href="https://drive.google.com/file/d/1cX3Afwik8hFWfjoPgcglMJYVVclhIGWl/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 30</div><div class="ptitle"><span class="en-i">Compliance Assessment — Executive Summary</span><span class="fr-i">Évaluation — Résumé Exécutif</span></div><div class="psub"><span class="en-i">C-suite summary of the NorthStream compliance assessment.</span><span class="fr-i">Résumé exécutif de l'évaluation de conformité NorthStream.</span></div><div class="ptags"><span class="ptag tb">Executive</span><span class="ptag tg">Summary</span></div><a href="https://drive.google.com/file/d/1EZu_ZmI8U2DaW1f5b8za4gHx8NnXE043/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 31</div><div class="ptitle"><span class="en-i">Configuration Baseline — Web Server</span><span class="fr-i">Baseline de Configuration — Serveur Web</span></div><div class="psub"><span class="en-i">Hardening checklist for NorthStream web server.</span><span class="fr-i">Liste de contrôle de durcissement pour le serveur web NorthStream.</span></div><div class="ptags"><span class="ptag tr">Hardening</span><span class="ptag ta">Baseline</span><span class="ptag tb">Web</span></div><a href="https://drive.google.com/file/d/1z-Mt4pBRkPc4bzOUD7-aj3BzrdWFiEnf/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 32</div><div class="ptitle"><span class="en-i">Ubuntu 24.04 LTS — CIS Benchmark Assessment</span><span class="fr-i">Ubuntu 24.04 LTS — Évaluation CIS Benchmark</span></div><div class="psub"><span class="en-i">CIS Benchmark compliance assessment on Ubuntu 24.04 LTS.</span><span class="fr-i">Évaluation de conformité CIS Benchmark sur Ubuntu 24.04 LTS.</span></div><div class="ptags"><span class="ptag tg">Ubuntu</span><span class="ptag ta">CIS Benchmark</span><span class="ptag tb">Linux</span></div><a href="https://drive.google.com/file/d/1tprPgv7sufAo6qk2q5YLhA78hMbmY7_B/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 33</div><div class="ptitle"><span class="en-i">Scripted Verification Report — NorthStream</span><span class="fr-i">Rapport de Vérification Scriptée — NorthStream</span></div><div class="psub"><span class="en-i">Automated compliance verification using scripted checks.</span><span class="fr-i">Vérification de conformité automatisée via contrôles scriptés.</span></div><div class="ptags"><span class="ptag tg">Scripting</span><span class="ptag ta">Automation</span></div><a href="https://drive.google.com/file/d/1wnOZnuVpJ118wgPzPovCrq6vXb34rXBV/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 34</div><div class="ptitle"><span class="en-i">Legal Requirements Register — Full LRR</span><span class="fr-i">Registre Complet des Exigences Légales</span></div><div class="psub"><span class="en-i">Complete legislation register for NorthStream Energy &amp; Logistics.</span><span class="fr-i">Registre de législation complet pour NorthStream Energy &amp; Logistics.</span></div><div class="ptags"><span class="ptag tb">LRR</span><span class="ptag ta">Legislation</span></div><a href="https://drive.google.com/file/d/1lAQ84XY2JqYrEOpVKc7IrgwSBWG5zNrj/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 35</div><div class="ptitle"><span class="en-i">International Compliance — Conflict Resolution</span><span class="fr-i">Conformité Internationale — Résolution de Conflits</span></div><div class="psub"><span class="en-i">Multi-jurisdictional conflict resolution and risk prioritization.</span><span class="fr-i">Résolution de conflits multi-juridictionnels et priorisation des risques.</span></div><div class="ptags"><span class="ptag tb">ICM</span><span class="ptag ta">Risk Priority</span></div><a href="https://drive.google.com/file/d/1lOFDrcDfGlbQS8lnJLWdfmnkNMzl9Pvo/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
   <!-- CYBER DEFENCE -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">🛡️</span>
-      <span class="cat-title"><span class="en-i">Cyber Defence</span><span class="fr-i">Défense Cyber</span></span>
-      <span class="cat-count">6 <span class="en-i">PROJECTS</span><span class="fr-i">PROJETS</span></span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">🛡️</span><span class="cat-title"><span class="en-i">Cyber Defence</span><span class="fr-i">Défense Cyber</span></span><span class="cat-count">6</span></div>
     <div class="proj-grid">
-      <div class="proj-card"><div class="pnum"># 36</div><div class="ptitle"><span class="en-i">Configuring Iptables Rules &amp; Fwbuilder</span><span class="fr-i">Configuration des Règles Iptables &amp; Fwbuilder</span></div><div class="psub"><span class="en-i">Manual iptables rule configuration and GUI-based management.</span><span class="fr-i">Configuration manuelle des règles iptables et gestion par interface graphique.</span></div><div class="ptags"><span class="ptag tg">iptables</span><span class="ptag ta">Fwbuilder</span><span class="ptag tb">Firewall</span></div><a href="https://drive.google.com/file/d/1V_3fLAIhl6Kz0WqlGmXW_0UW9Hrrc-Am/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 37–38</div><div class="ptitle"><span class="en-i">Endpoint Security &amp; Linux Hardening</span><span class="fr-i">Sécurité des Endpoints &amp; Durcissement Linux</span></div><div class="psub"><span class="en-i">Two-part lab: hardening Linux endpoints against common attack vectors.</span><span class="fr-i">Lab en deux parties : durcissement des endpoints Linux.</span></div><div class="ptags"><span class="ptag tg">Linux</span><span class="ptag tr">Hardening</span><span class="ptag ta">Endpoint</span></div><a href="https://drive.google.com/file/d/1RB7Uh9hFwChYOO4A4d3D-PfJoRH_O2df/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 39</div><div class="ptitle"><span class="en-i">Network Reconnaissance &amp; Firewall Evasion</span><span class="fr-i">Reconnaissance Réseau &amp; Évasion de Pare-feu</span></div><div class="psub"><span class="en-i">Techniques for bypassing firewall rules and detecting evasion attempts.</span><span class="fr-i">Techniques de contournement des règles de pare-feu.</span></div><div class="ptags"><span class="ptag tr">Evasion</span><span class="ptag ta">Recon</span><span class="ptag tb">Firewall</span></div><a href="https://drive.google.com/file/d/1mktvHD4nFoHlDbKZssbLtTJreObG08j-/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 40</div><div class="ptitle"><span class="en-i">Endpoint Security &amp; Windows Systems Defense</span><span class="fr-i">Sécurité Endpoints &amp; Défense Windows</span></div><div class="psub"><span class="en-i">Windows hardening, Group Policy, and endpoint defence configuration.</span><span class="fr-i">Durcissement Windows, Stratégie de Groupe et défense endpoint.</span></div><div class="ptags"><span class="ptag tb">Windows</span><span class="ptag ta">Group Policy</span><span class="ptag tr">Hardening</span></div><a href="https://drive.google.com/file/d/1YSX9aZKWIw1FFhW0rc7lgvyjni-52zmD/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
-      <div class="proj-card"><div class="pnum"># 41</div><div class="ptitle"><span class="en-i">SIEM &amp; XDR Implementation with Wazuh</span><span class="fr-i">Implémentation SIEM &amp; XDR avec Wazuh</span></div><div class="psub"><span class="en-i">Full SIEM deployment, agent config, and XDR detection rules in Wazuh.</span><span class="fr-i">Déploiement SIEM complet, configuration d'agents et règles XDR dans Wazuh.</span></div><div class="ptags"><span class="ptag tg">Wazuh</span><span class="ptag tb">SIEM</span><span class="ptag ta">XDR</span></div><a href="https://drive.google.com/file/d/1LCx2Kt4XyxIAZDmoZG4K2jJA9-flMIHt/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 36</div><div class="ptitle"><span class="en-i">Configuring Iptables &amp; Fwbuilder</span><span class="fr-i">Configuration Iptables &amp; Fwbuilder</span></div><div class="psub"><span class="en-i">Manual iptables rules and GUI-based firewall management.</span><span class="fr-i">Règles iptables manuelles et gestion par interface graphique.</span></div><div class="ptags"><span class="ptag tg">iptables</span><span class="ptag ta">Fwbuilder</span><span class="ptag tb">Firewall</span></div><a href="https://drive.google.com/file/d/1V_3fLAIhl6Kz0WqlGmXW_0UW9Hrrc-Am/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 37–38</div><div class="ptitle"><span class="en-i">Endpoint Security &amp; Linux Hardening</span><span class="fr-i">Sécurité Endpoints &amp; Durcissement Linux</span></div><div class="psub"><span class="en-i">Two-part lab: hardening Linux endpoints against attack vectors.</span><span class="fr-i">Lab en deux parties : durcissement des endpoints Linux.</span></div><div class="ptags"><span class="ptag tg">Linux</span><span class="ptag tr">Hardening</span><span class="ptag ta">Endpoint</span></div><a href="https://drive.google.com/file/d/1RB7Uh9hFwChYOO4A4d3D-PfJoRH_O2df/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 39</div><div class="ptitle"><span class="en-i">Network Reconnaissance &amp; Firewall Evasion</span><span class="fr-i">Reconnaissance Réseau &amp; Évasion Pare-feu</span></div><div class="psub"><span class="en-i">Bypassing firewall rules and detecting evasion attempts.</span><span class="fr-i">Contournement de règles de pare-feu et détection des tentatives d'évasion.</span></div><div class="ptags"><span class="ptag tr">Evasion</span><span class="ptag ta">Recon</span><span class="ptag tb">Firewall</span></div><a href="https://drive.google.com/file/d/1mktvHD4nFoHlDbKZssbLtTJreObG08j-/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 40</div><div class="ptitle"><span class="en-i">Windows Systems Defence — Endpoint Security</span><span class="fr-i">Défense Windows — Sécurité Endpoint</span></div><div class="psub"><span class="en-i">Windows hardening, Group Policy enforcement, endpoint defence.</span><span class="fr-i">Durcissement Windows, application GPO et défense endpoint.</span></div><div class="ptags"><span class="ptag tb">Windows</span><span class="ptag ta">Group Policy</span><span class="ptag tr">Hardening</span></div><a href="https://drive.google.com/file/d/1YSX9aZKWIw1FFhW0rc7lgvyjni-52zmD/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
+      <div class="proj-card"><div class="pnum"># 41</div><div class="ptitle"><span class="en-i">SIEM &amp; XDR Implementation — Wazuh</span><span class="fr-i">Implémentation SIEM &amp; XDR — Wazuh</span></div><div class="psub"><span class="en-i">Full SIEM deployment, agent config, and XDR detection rules.</span><span class="fr-i">Déploiement SIEM complet, configuration d'agents et règles XDR.</span></div><div class="ptags"><span class="ptag tg">Wazuh</span><span class="ptag tb">SIEM</span><span class="ptag ta">XDR</span></div><a href="https://drive.google.com/file/d/1LCx2Kt4XyxIAZDmoZG4K2jJA9-flMIHt/view?usp=drive_link" target="_blank" class="plink"><span class="en-i">View Report</span><span class="fr-i">Voir</span></a></div>
     </div>
   </div>
 
   <!-- CAPSTONE -->
   <div class="cat-sec reveal">
-    <div class="cat-head">
-      <span class="cat-icon">🏆</span>
-      <span class="cat-title"><span class="en-i">Capstone Project</span><span class="fr-i">Projet Capstone</span></span>
-      <span class="cat-count">FINAL</span>
-    </div>
+    <div class="cat-head"><span class="cat-icon">🏆</span><span class="cat-title"><span class="en-i">Capstone Project</span><span class="fr-i">Projet Capstone</span></span><span class="cat-count">FINAL</span></div>
     <div class="capstone">
       <div class="pnum"># 42 · FINAL PROJECT · 420-4C2-DW</div>
-      <div class="ptitle">
-        <span class="en-i">Project <span class="hl">NordForge</span> — End-to-End Corporate Cybersecurity Program</span>
-        <span class="fr-i">Projet <span class="hl">NordForge</span> — Programme de Cybersécurité d'Entreprise Complet</span>
-      </div>
+      <div class="ptitle">Project <span class="hl">NordForge</span> — <span class="en-i">End-to-End Corporate Cybersecurity Program</span><span class="fr-i">Programme de Cybersécurité d'Entreprise Complet</span></div>
       <div class="psub">
         <span class="en-i">Implementation &amp; Management of Corporate Cybersecurity Measures. Full program covering governance, risk, compliance, incident response, technical controls, and security architecture — designed and implemented end-to-end.</span>
         <span class="fr-i">Implémentation &amp; Gestion des Mesures de Cybersécurité d'Entreprise. Programme complet couvrant gouvernance, risque, conformité, réponse aux incidents, contrôles techniques et architecture de sécurité.</span>
       </div>
-      <div class="ptags">
-        <span class="ptag tg">Governance</span><span class="ptag tb">GRC</span><span class="ptag tr">IR</span>
-        <span class="ptag ta">Architecture</span><span class="ptag tg">Compliance</span><span class="ptag tp">Capstone</span>
-      </div>
+      <div class="ptags"><span class="ptag tg">Governance</span><span class="ptag tb">GRC</span><span class="ptag tr">IR</span><span class="ptag ta">Architecture</span><span class="ptag tg">Compliance</span><span class="ptag tp">Capstone</span></div>
       <div style="margin-top:20px;">
         <a href="https://drive.google.com/file/d/123dr4dP1_g6dhhM5xAVgUvbSZFGUmK4f/view?usp=sharing" target="_blank" class="plink" style="padding:9px 20px;font-size:10px;">
-          <span class="en-i">View Full Capstone Report</span>
-          <span class="fr-i">Voir le Rapport Capstone Complet</span>
+          <span class="en-i">View Full Capstone Report</span><span class="fr-i">Voir le Rapport Capstone Complet</span>
         </a>
       </div>
     </div>
@@ -1403,14 +839,14 @@ body.lang-fr .fr-i{display:inline;}
 </div>
 </div>
 
-<!-- ══ TAB: CV ══ -->
+<!-- ══ CV ══ -->
 <div id="tab-cv" class="page-section">
 <div class="wrap">
   <div class="cv-hero reveal">
     <h2>Mohammad Salem Hassani</h2>
     <p>
-      <span class="en-i">Download the full CV with work experience, education, certifications, and technical skills. Available in PDF for recruiters and hiring managers.</span>
-      <span class="fr-i">Téléchargez le CV complet avec expérience professionnelle, formation, certifications et compétences techniques. Disponible en PDF.</span>
+      <span class="en-i">Download the full CV — IT Support experience, education, certifications, and technical skills. Available in PDF format for recruiters and hiring managers in Montréal and Ottawa.</span>
+      <span class="fr-i">Téléchargez le CV complet — expérience Soutien TI, formation, certifications et compétences techniques. Disponible en PDF pour les recruteurs et gestionnaires d'embauche à Montréal et Ottawa.</span>
     </p>
     <div class="cv-btns">
       <a href="https://raw.githubusercontent.com/salem228h/salem-hassani-portfolio/main/CV.pdf" download target="_blank" class="btn-primary">⬇ <span class="en-i">Download CV (PDF)</span><span class="fr-i">Télécharger CV (PDF)</span></a>
@@ -1419,24 +855,23 @@ body.lang-fr .fr-i{display:inline;}
   </div>
   <div class="vcards reveal">
     <div class="vcard" style="text-align:center;"><div class="vc-icon">🏛️</div><h3><span class="en-i">Work Experience</span><span class="fr-i">Expérience</span></h3><p><span class="en-i">2+ years IT Support &amp; Operations at NSIA (Afghanistan national government authority).</span><span class="fr-i">2+ ans Soutien TI &amp; Opérations à la NSIA (autorité gouvernementale nationale).</span></p></div>
-    <div class="vcard" style="text-align:center;"><div class="vc-icon">🎓</div><h3><span class="en-i">Education</span><span class="fr-i">Formation</span></h3><p><span class="en-i">AEC Cybersecurity – Dawson College (2025–Present) · B.Sc. IT – Kabul Polytechnic University.</span><span class="fr-i">AEC Cybersécurité – Collège Dawson (2025–Présent) · B.Sc. TI – Université Polytechnique de Kaboul.</span></p></div>
-    <div class="vcard" style="text-align:center;"><div class="vc-icon">📜</div><h3><span class="en-i">Certifications</span><span class="fr-i">Certifications</span></h3><p><span class="en-i">Google Cybersecurity · CompTIA Security+ (In Progress) · TryHackMe Top 21%.</span><span class="fr-i">Certificat Google Cybersécurité · CompTIA Security+ (En cours) · TryHackMe Top 21%.</span></p></div>
-    <div class="vcard" style="text-align:center;"><div class="vc-icon">🌐</div><h3><span class="en-i">Languages</span><span class="fr-i">Langues</span></h3><p><span class="en-i">English (Fluent) · French (A2 – Improving) · Dari (Native).</span><span class="fr-i">Anglais (Courant) · Français (A2 – En progression) · Dari (Natif).</span></p></div>
+    <div class="vcard" style="text-align:center;"><div class="vc-icon">🎓</div><h3><span class="en-i">Education</span><span class="fr-i">Formation</span></h3><p><span class="en-i">AEC Cybersecurity – Dawson College (2025–Present) · B.Sc. IT – Kabul Polytechnic University (QC-Recognized).</span><span class="fr-i">AEC Cybersécurité – Collège Dawson (2025–Présent) · B.Sc. TI – Université Polytechnique de Kaboul (Reconnu QC).</span></p></div>
+    <div class="vcard" style="text-align:center;"><div class="vc-icon">📜</div><h3><span class="en-i">Certifications</span><span class="fr-i">Certifications</span></h3><p><span class="en-i">Google Cybersecurity · CompTIA Security+ (In Progress) · TryHackMe Top 21% · Azure AZ-900 (Planned).</span><span class="fr-i">Certificat Google Cybersécurité · CompTIA Security+ (En cours) · TryHackMe Top 21% · Azure AZ-900 (Planifié).</span></p></div>
+    <div class="vcard" style="text-align:center;"><div class="vc-icon">🌐</div><h3><span class="en-i">Languages</span><span class="fr-i">Langues</span></h3><p><span class="en-i">English (Fluent) · French (A2 – Improving) · Dari (Native) — suitable for bilingual workplaces.</span><span class="fr-i">Anglais (Courant) · Français (A2 – En progression) · Dari (Natif) — adapté aux milieux bilingues.</span></p></div>
   </div>
 </div>
 </div>
 
 <footer>
-  <span class="fl">salem@hassani</span> · it support &amp; cybersecurity student · dawson college aec · montréal, qc · <span class="fl">linkedin.com/in/salem786</span>
+  <span class="fl">salem@hassani</span> · it support &amp; cybersecurity · dawson college aec · montréal &amp; ottawa · <span class="fl">linkedin.com/in/salem786</span>
 </footer>
 
 <script>
 function setLang(l){
-  document.body.className=document.body.className.replace(/lang-\w+/,'')+'lang-'+l;
+  document.body.className=document.body.className.replace(/lang-\w+/g,'')+'lang-'+l;
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.getElementById('btn-fr').classList.toggle('active',l==='fr');
 }
-
 function showTab(name,e){
   document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
@@ -1445,20 +880,15 @@ function showTab(name,e){
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(doReveal,60);
 }
-
 function doReveal(){
   const els=document.querySelectorAll('.page-section.active .reveal:not(.visible)');
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach((en,i)=>{
-      if(en.isIntersecting){
-        setTimeout(()=>en.target.classList.add('visible'),i*55);
-        obs.unobserve(en.target);
-      }
+      if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*55);obs.unobserve(en.target);}
     });
   },{threshold:0.07});
   els.forEach(el=>obs.observe(el));
 }
-
 document.addEventListener('DOMContentLoaded',doReveal);
 </script>
 </body>
